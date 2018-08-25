@@ -1,6 +1,6 @@
 # HouseBlocks
 * 用cocos2d-js框架开发的网页游戏
-* 你可以从这个项目中掌握：
+### 你可以从这个项目中掌握：
   1.文字的添加
   2.ui菜单按钮的基本使用
   3.场景切换的方法
@@ -10,7 +10,7 @@
   7.触摸事件的基本使用 [示例-单点触摸事件](https://blog.csdn.net/u011607490/article/details/81388344)
   8.其他 [访问我的CSDN](https://blog.csdn.net/u011607490/article/list/1)
 	
-### 联系我
+## 联系我
 > saber2pr@gmail.com
 > 1029985799@qq.com
 ## 这里有三个版本
