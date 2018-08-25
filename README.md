@@ -8,7 +8,7 @@
  5. 绘图API的基本使用 [示例-绘制填充矩形DrawNode](https://blog.csdn.net/u011607490/article/details/81368195)
  6. 动作序列的基本使用
  7. 触摸事件的基本使用 [示例-单点触摸事件](https://blog.csdn.net/u011607490/article/details/81388344)
- 8. 其他 [访问我的CSDN](https://blog.csdn.net/u011607490/article/list/1)
+ 8. 其他 [访问我的CSDN](https://blog.csdn.net/u011607490/article/category/7899652)
 	
 ## 联系我
 > saber2pr@gmail.com
