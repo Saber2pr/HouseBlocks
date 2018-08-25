@@ -14,12 +14,12 @@
 > saber2pr@gmail.com
 > 1029985799@qq.com
 ## 这里有三个版本
-1.HouseBlocks-Current-v_Chinese-ForWeChat
-  适配微信api的release（压缩）版本
-2.HouseBlocks-Current（推荐）
-  英文界面，debug版本，游戏结束有显示当前分数的功能（源代码：index.html）
-3.HouseBlocks0.1
-  中文界面，release（压缩）版本。
+* 1.HouseBlocks-Current-v_Chinese-ForWeChat
+> 适配微信api的release（压缩）版本
+* 2.HouseBlocks-Current（推荐）
+> 英文界面，debug版本，游戏结束有显示当前分数的功能（源代码：index.html）
+* 3.HouseBlocks0.1
+> 中文界面，release（压缩）版本。
 # Notice:
 * Please indicate the source of the reprint.
 * Open source is used only for learning.
