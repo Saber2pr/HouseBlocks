@@ -4,8 +4,7 @@
 		1.文字的添加
 		2.ui菜单按钮的基本使用
 		3.场景切换的方法
-		4.chipmunk物理引擎的基本使用 
-		[示例-使用物理引擎chipmunk创建物理世界场景](https://blog.csdn.net/u011607490/article/details/81347359)
+		4.chipmunk物理引擎的基本使用 [示例-使用物理引擎chipmunk创建物理世界场景]:(https://blog.csdn.net/u011607490/article/details/81347359)
 		5.绘图API的基本使用 [示例-绘制填充矩形DrawNode](https://blog.csdn.net/u011607490/article/details/81368195)
 		6.动作序列的基本使用
 		7.触摸事件的基本使用 [示例-单点触摸事件](https://blog.csdn.net/u011607490/article/details/81388344)
