@@ -10,7 +10,10 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+        // 启用物理引擎相关功能  
+        cc.director.getPhysicsManager().enabled = true;  
+    },
 
     start () {
         this.backBtn.node.on("click", this.backToStartScene, this)
