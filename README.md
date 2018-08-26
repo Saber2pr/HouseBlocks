@@ -14,7 +14,7 @@
 * 1.HouseBlocks-Current-v_Chinese-ForWeChat
 > 适配微信api的release（压缩）版本
 * 2.HouseBlocks-Current（推荐）
-> 英文界面，debug版本，游戏结束有显示当前分数的功能（源代码：index.html）
+> 英文界面，debug版本，游戏结束有显示当前分数的功能（源代码：[index.html](https://github.com/Saber2pr/HouseBlocks/blob/master/HouseBlocks-current/index.html)）
 * 3.HouseBlocks0.1
 > 中文界面，release（压缩）版本。
 
