@@ -13,13 +13,13 @@
  8. 其他 [访问我的CSDN](https://blog.csdn.net/u011607490/article/category/7899652)
 	
 ## 这里有四个版本
-* 1.HouseBlocks-Current-v_Chinese-ForWeChat
+* HouseBlocks-Current-v_Chinese-ForWeChat
 > 适配微信api的release（压缩）版本
-* 2.HouseBlocks-Current（推荐）
+* HouseBlocks-Current（推荐）
 > 英文界面，debug版本，游戏结束有显示当前分数的功能（源代码：[index.html](https://github.com/Saber2pr/HouseBlocks/blob/master/HouseBlocks-current/index.html)）
-* 3.HouseBlocks0.1
+* HouseBlocks0.1
 > 中文界面，release（压缩）版本。
-* 4.HouseBlocks_CocosCreator（未完整）
+* HouseBlocks_CocosCreator（未完整）
 > 正在coding...
 
 ## 联系我
