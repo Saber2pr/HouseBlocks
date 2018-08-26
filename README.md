@@ -11,8 +11,8 @@
  8. 其他 [访问我的CSDN](https://blog.csdn.net/u011607490/article/category/7899652)
 	
 ## 联系我
-> saber2pr@gmail.com
-> 1029985799@qq.com
+* saber2pr@gmail.com
+* 1029985799@qq.com
 ## 这里有三个版本
 * 1.HouseBlocks-Current-v_Chinese-ForWeChat
 > 适配微信api的release（压缩）版本
