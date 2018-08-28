@@ -1,6 +1,8 @@
+var GlobalData = require("GlobalData")
+
 cc.Class({
     extends: cc.Component,
-    
+
     properties: {
         //background
         backgroundColor:cc.Sprite,
@@ -14,7 +16,6 @@ cc.Class({
 
     },
 
-    HouseVector:null,
     scoreString:null,
 
     onLoad () {
@@ -26,21 +27,27 @@ cc.Class({
         cc.director.getPhysicsManager().enabled = true
         cc.director.getPhysicsManager().gravity = this.gravity
 
+        //获取碰撞管理者
+        var manager = cc.director.getCollisionManager()
+        manager.enabled = true
+
         //注册触摸监听
         this.backgroundColor.node.on("touchstart", function(event){
             cc.log("touched!")
             this.addHouse()
         }, this)
 
-        //初始化数组容器
-        this.HouseVector = []
+        //初始化全局数组
+        GlobalData.HouseVector = []
         this.scoreString = this.scoreLabel.string
+
+        this.backgroundColor.node.color = this.randColor()
     },
 
     start () {
-        this.backBtn.node.on("click", this.backToStartScene, this)
-        
+        this.backBtn.node.on("click", this.backToStartScene, this) 
         this.houseColor.node.color = this.randColor()
+        
     },
 
     backToStartScene () {
@@ -48,11 +55,19 @@ cc.Class({
     },
 
     addHouse () {
+        var width = 50
+        var height = 50
+
         var house = cc.instantiate(this.house)
         house.parent = this.backgroundColor.node
-        house.setPosition(this.house_onRope.getPositionX(), this.house_onRope.getPositionY() - 70)
-        // cc.log(house.getPositionX())
-        this.HouseVector.push(house)
+        house.setPosition(this.house_onRope.getPositionX(), this.house_onRope.getPositionY() - height)
+        
+        var color = house.getComponent(cc.Graphics)
+        color.rect(-width / 2, -height / 2, width, height)
+        color.fillColor = this.randColor()
+        color.fill()
+
+        GlobalData.HouseVector.push(house)
     },
 
     randColor () {
@@ -63,22 +78,8 @@ cc.Class({
         return cc.color(c1, c2, c3, c4)
     },
 
-    posTest (vector) {
-        if (vector.length > 1) {
-            for (var i = 0; i < vector.length; i++) {
-                var x = vector[i].getPositionX() + cc.width / 2
-                cc.log(x)
-                if (x < 0 || x > cc.winSize.width) {
-                    cc.log("house x :" + vector[i].x)
-                    cc.director.loadScene("GameOverScene")
-                }
-            }
-        }
-    },
-
     update (dt) {
-        this.scoreLabel.string = this.scoreString + this.HouseVector.length
-        // this.posTest(this.HouseVector)
+        this.scoreLabel.string = this.scoreString + GlobalData.HouseVector.length
     }
 
 });
