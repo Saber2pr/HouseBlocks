@@ -8,10 +8,6 @@ cc.Class({
         restartBtn:cc.Button
     },
 
-    // LIFE-CYCLE CALLBACKS:
-
-    // onLoad () {},
-
     start () {
         this.score.string = GlobalData.HouseVector.length
         this.restartBtn.node.on("click", this.gotoPlayScene, this)
@@ -20,5 +16,5 @@ cc.Class({
     gotoPlayScene () {
         cc.director.loadScene("PlayScene")
     }
-    // update (dt) {},
+
 });

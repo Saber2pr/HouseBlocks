@@ -6,7 +6,6 @@ cc.Class({
     properties: {
         //background
         backgroundColor:cc.Sprite,
-        scoreLabel:cc.Label,
         //ui
         backBtn:cc.Button,
         //house
@@ -17,6 +16,7 @@ cc.Class({
     },
 
     scoreString:null,
+    randColor:GlobalData.randColor,
 
     onLoad () {
         // //建立物理世界
@@ -27,10 +27,6 @@ cc.Class({
         cc.director.getPhysicsManager().enabled = true
         cc.director.getPhysicsManager().gravity = this.gravity
 
-        //获取碰撞管理者
-        var manager = cc.director.getCollisionManager()
-        manager.enabled = true
-
         //注册触摸监听
         this.backgroundColor.node.on("touchstart", function(event){
             cc.log("touched!")
@@ -39,9 +35,8 @@ cc.Class({
 
         //初始化全局数组
         GlobalData.HouseVector = []
-        this.scoreString = this.scoreLabel.string
 
-        this.backgroundColor.node.color = this.randColor()
+        // this.backgroundColor.node.color = this.randColor()
     },
 
     start () {
@@ -60,26 +55,28 @@ cc.Class({
 
         var house = cc.instantiate(this.house)
         house.parent = this.backgroundColor.node
-        house.setPosition(this.house_onRope.getPositionX(), this.house_onRope.getPositionY() - height)
-        
+        house.setPosition(this.house_onRope.x, this.house_onRope.y - height)
+
         var color = house.getComponent(cc.Graphics)
         color.rect(-width / 2, -height / 2, width, height)
         color.fillColor = this.randColor()
         color.fill()
 
         GlobalData.HouseVector.push(house)
+        GlobalData.numFive = GlobalData.HouseVector.length%5 === 0
+        cc.log(GlobalData.numFive)
     },
 
-    randColor () {
-        var c1 = 55 + 200 * cc.random0To1()
-        var c2 = 55 + 200 * cc.random0To1()
-        var c3 = 55 + 200 * cc.random0To1()
-        var c4 = 55 + 200 * cc.random0To1()
-        return cc.color(c1, c2, c3, c4)
-    },
 
+    //注册定时器
     update (dt) {
-        this.scoreLabel.string = this.scoreString + GlobalData.HouseVector.length
-    }
+        if (GlobalData.numFive) {
+            
+        }
+    },
 
+    //注销定时器
+    onDestroy () {
+        this.unschedule(this.update)
+    }
 });
