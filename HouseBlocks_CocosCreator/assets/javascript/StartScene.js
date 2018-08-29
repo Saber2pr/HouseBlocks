@@ -5,12 +5,8 @@ cc.Class({
     properties: {
         default:null,
         type:cc.Node,
-        startBtn:cc.Button
+        startBtn:cc.Button,
     },
-
-    // LIFE-CYCLE CALLBACKS:
-
-    // onLoad () {},
 
     start () {
         this.startBtn.node.on("click", this.gotoPlayScene, this)
@@ -19,5 +15,5 @@ cc.Class({
     gotoPlayScene () {
         cc.director.loadScene("PlayScene")
     }
-    // update (dt) {},
+
 });

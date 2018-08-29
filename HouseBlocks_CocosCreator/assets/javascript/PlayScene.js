@@ -11,8 +11,7 @@ cc.Class({
         //house
         house_onRope:cc.Node,
         houseColor:cc.Sprite,
-        house:cc.Node
-
+        house:cc.Node,
     },
 
     scoreString:null,

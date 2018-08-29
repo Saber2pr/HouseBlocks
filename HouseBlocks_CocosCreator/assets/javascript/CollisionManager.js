@@ -6,7 +6,8 @@ cc.Class({
     properties:{
         scoreLabel:cc.Label,
         bottom:cc.Node,
-        backgroundColor:cc.Sprite
+        backgroundColor:cc.Sprite,
+        audio:cc.AudioClip
     },
     //碰撞初
     onBeginContact (contact,selfCollider,otherCollider){
@@ -35,5 +36,6 @@ cc.Class({
             var seq = cc.sequence(tintTo, tintBy, tintTo1)
             this.backgroundColor.node.runAction(seq)
         }
+        this.current = cc.audioEngine.play(this.audio, false, 1)
     }
 })
