@@ -1,8 +1,9 @@
 # HouseBlocks
 ![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CU.jpg)
 ![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CCC.jpg)
-[试玩2d-js版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks-current/)
-[试玩creator版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile/)
+
+> [试玩2d-js版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks-current/)
+> [试玩creator版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile/)
 
 * 用cocos2d-js框架开发的网页游戏
 * 从这个项目中会学到:
