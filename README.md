@@ -1,6 +1,7 @@
 # HouseBlocks
- cocos-js版本				  cocosCreator版本
+ cocos-js版本
 ![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CU.jpg)
+cocosCreator版本
 ![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CCC.jpg)
 
 * 用cocos2d-js框架开发的网页游戏
