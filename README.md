@@ -1,5 +1,6 @@
 # HouseBlocks
-![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HouseBlocks_sm.jpg)
+![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CU.jpg)
+![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CCC.jpg)
 
 * 用cocos2d-js框架开发的网页游戏
 * 从这个项目中会学到:
