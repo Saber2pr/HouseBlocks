@@ -1,5 +1,5 @@
 # HouseBlocks
-> cocos-js版本				  cocosCreator版本
+ cocos-js版本				  cocosCreator版本
 ![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CU.jpg)
 ![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CCC.jpg)
 
