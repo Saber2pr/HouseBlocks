@@ -1,6 +1,8 @@
 # HouseBlocks
 ![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CU.jpg)
 ![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CCC.jpg)
+[试玩2d-js版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks-current/)
+[试玩creator版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile/)
 
 * 用cocos2d-js框架开发的网页游戏
 * 从这个项目中会学到:
@@ -20,8 +22,8 @@
 > 英文界面，debug版本，游戏结束有显示当前分数的功能（源代码：[index.html](https://github.com/Saber2pr/HouseBlocks/blob/master/HouseBlocks-current/index.html)）
 * HouseBlocks0.1
 > 中文界面，release（压缩）版本。
-* HouseBlocks_CocosCreator（未完整）
-> 正在coding...
+* HouseBlocks_CocosCreator
+> [查看源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CocosCreator/assets/javascript)
 
 ## 联系我
 * saber2pr@gmail.com
