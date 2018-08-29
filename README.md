@@ -33,8 +33,8 @@
 > 英文界面，debug版本，游戏结束有显示当前分数的功能（源代码：[index.html](https://github.com/Saber2pr/HouseBlocks/blob/master/HouseBlocks-current/index.html)）
 * HouseBlocks0.1
 > 中文界面，release（压缩）版本。
-* HouseBlocks_CocosCreator（JavaScript脚本）
-> [查看源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CocosCreator/assets/javascript)
+* HouseBlocks_CocosCreator（JavaScript脚本）（推荐）
+> 物理效果更加真实，无贴图[查看源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CocosCreator/assets/javascript)
 
 ## 联系我
 * saber2pr@gmail.com
