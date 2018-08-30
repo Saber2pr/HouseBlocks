@@ -15,12 +15,12 @@ cc.Class({
         var worldManifold = contact.getWorldManifold()
         //获取碰撞点的世界坐标[0:vec2, 1:vec2, ...]
         var points = worldManifold.points
-        //判断触地
-        if (GlobalData.HouseVector.length > 1 && points[0].y < 1) {
+        //判断触地,考虑到物理弹性所以小于10
+        if (GlobalData.HouseVector.length > 1 && points[0].y < 10) {
             //这里会报错不过可以忽略
             cc.director.loadScene("GameOverScene")
         }
-        this.scoreLabel.string = "分数：" + GlobalData.HouseVector.length
+        this.scoreLabel.string = "思考：" + GlobalData.HouseVector.length
         if (points[0].y > cc.winSize.height/4) {
             var dorpAction = cc.moveTo(0.5, cc.v2(this.bottom.x, this.bottom.y - GlobalData.HouseVector[0].getContentSize().height))
             this.bottom.runAction(dorpAction)
@@ -29,7 +29,7 @@ cc.Class({
                 house.runAction(dorpAction)
             }
         }
-        if (GlobalData.HouseVector.length > 2) {
+        if (GlobalData.HouseVector.length > 0) {
             var tintTo = cc.tintTo(2.0, 120.0, 232.0, 254.0)
             var tintBy = cc.tintBy(2, 120, 232, 254)
             var tintTo1 = cc.tintTo(0, 0, 0, 0)

@@ -1,7 +1,5 @@
 var globalData = {
     HouseVector:null,
-    numFive:null,
-    score:null,
     scoreVector:[],
 
     randColor: function () {
