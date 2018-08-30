@@ -34,7 +34,7 @@
 * HouseBlocks0.1
 > 中文界面，release（压缩）版本。
 * HouseBlocks_CocosCreator（JavaScript脚本）（推荐）
-> 物理效果更加真实，无贴图, 游戏结束有统计最高分数的功能（[查看脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CocosCreator/assets/javascript)）
+> 物理效果更加真实，添加了音效, 游戏结束有统计最高分数的功能（[查看脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CocosCreator/assets/javascript)）
 
 ## 联系我
 * saber2pr@gmail.com
