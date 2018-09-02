@@ -4,7 +4,7 @@
 
 > [试玩2d-js版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks-current/)
 > [试玩creator版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile/)
-> [下载离线版ForAndroid](https://pan.baidu.com/s/1ypif9Bm356Dud2YMVXOnvw)
+> [下载离线版ForAndroid](https://pan.baidu.com/s/1ypif9Bm356Dud2YMVXOnvw "密码：ao25")
 
 * cocos2d-js版本
  1. 文字的添加
