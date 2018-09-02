@@ -4,7 +4,7 @@
 
 > [试玩2d-js版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks-current/)
 > [试玩creator版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile/)
-> [下载离线版ForAndroid](https://github.com/Saber2pr/HouseBlocks/blob/master/HouseBlocks_CocosCreator/build/android/HouseBlocks_CocosCreator-release-signed.apk)
+> [下载离线版ForAndroid](https://github.com/Saber2pr/HouseBlocks/raw/master/HouseBlocks_CocosCreator/build/android/HouseBlocks_CocosCreator-release-signed.apk)
 
 * cocos2d-js版本
  1. 文字的添加
