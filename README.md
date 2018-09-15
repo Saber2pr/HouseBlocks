@@ -25,7 +25,7 @@
  5. 简单粒子效果
  6. 触摸事件[示例CSDN-事件监听](https://blog.csdn.net/u011607490/article/details/82179038)
  7. 碰撞事件[示例CSDN-碰撞回调](https://blog.csdn.net/u011607490/article/details/82179686)
- 8. 其他[访问我的CSDN](https://blog.csdn.net/u011607490/article/category/7971217)
+ 8. 其他 [访问我的CSDN](https://blog.csdn.net/u011607490/article/category/7971217)
 
 ## 这里有四个版本
 * HouseBlocks-Current-v_Chinese-ForWeChat
