@@ -37,6 +37,9 @@
 * HouseBlocks_CocosCreator（JavaScript脚本）（推荐）
 > 物理效果更加真实，添加了音效, 游戏结束有统计最高分数的功能（[查看脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CocosCreator/assets/javascript)）
 
+## 查看其他例子
+[Saber2pr/CocosCreatorExam](https://github.com/Saber2pr/CocosCreatorExam)
+
 ## 联系我
 * saber2pr@gmail.com
 * 1029985799@qq.com
