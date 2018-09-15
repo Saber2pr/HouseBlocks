@@ -1,5 +1,4 @@
 var GlobalData = require("GlobalData")
-var Animation = require("AnimationMediator")
 
 cc.Class({
     extends: cc.Component,
@@ -11,36 +10,27 @@ cc.Class({
         backBtn:cc.Button,
         //house
         house_onRope:cc.Node,
-        houseColor:cc.Sprite,
         house:cc.Node,
-        audio:cc.AudioClip
+        audio:cc.AudioClip,
+        //云朵图
+        clouds:cc.Node,
     },
 
-    randColor:GlobalData.randColor,
-
     onLoad () {
-        // //建立物理世界
-        this.gravity = cc.v2(0, -320)
         // 启用物理引擎相关功能  
         cc.director.getPhysicsManager().enabled = true
-        cc.director.getPhysicsManager().gravity = this.gravity
-
+        //设置重力加速度
+        cc.director.getPhysicsManager().gravity = cc.v2(0, -320)
         //注册触摸监听
         this.background.node.on("touchstart", function(event){
-            cc.log("touched!")
             this.addHouse()
         }, this)
-
         //初始化全局数组
         GlobalData.HouseVector = []
-
-        // this.background.node.color = this.randColor()
     },
 
     start () {
         this.backBtn.node.on("click", this.backToStartScene, this) 
-        this.houseColor.node.color = this.randColor()
-        
     },
 
     backToStartScene () {
@@ -49,27 +39,25 @@ cc.Class({
     },
 
     addHouse () {
-        var width = 50
-        var height = 50
-
+        //克隆节点
         var house = cc.instantiate(this.house)
+        //设置父节点
         house.parent = this.node
-        house.setPosition(this.house_onRope.x, this.house_onRope.y)
-
+        //得到绳子下端世界坐标
+        var worldPoint = this.house_onRope.parent.convertToWorldSpaceAR(this.house_onRope)
+        //转换到本地坐标
+        var localPoint = this.node.convertToNodeSpace(worldPoint)
+        //由于锚点错开0.5个身位需归位
+        var pos = cc.v2(localPoint.x, localPoint.y - house.getContentSize().height/2)
+        house.position = pos
+        //提交到数据模型
         GlobalData.HouseVector.push(house)
-        if (GlobalData.HouseVector.length%5 === 0) {
-            this.gravity = cc.v2(this.gravity.x, this.gravity.y-200)
-        }
     },
-
-    //注册定时器
-    update (dt) {
-        Animation.backgroundLoop(this.background, 24)
+    update(dt){
+        //云飘动速率
+        this.clouds.x = 
+            this.clouds.x < cc.winSize.width / 2? 
+                this.clouds.x + 1: 
+                0
     },
-
-    //注销定时器
-    onDestroy () {
-        this.unschedule(this.update)
-    }
-
-});
+})

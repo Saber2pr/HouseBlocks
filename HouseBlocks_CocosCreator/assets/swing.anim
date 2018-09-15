@@ -1,0 +1,73 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "swing",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 2,
+  "sample": 60,
+  "speed": 0.5,
+  "wrapMode": "2",
+  "curveData": {
+    "props": {
+      "rotation": [
+        {
+          "frame": 0,
+          "value": 30,
+          "curve": "sineInOut"
+        },
+        {
+          "frame": 1,
+          "value": -30,
+          "curve": "sineInOut"
+        },
+        {
+          "frame": 2,
+          "value": 30
+        }
+      ]
+    },
+    "paths": {
+      "Phy_House_Rope": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": -30,
+              "curve": "sineInOut"
+            },
+            {
+              "frame": 1,
+              "value": 30,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 2,
+              "value": -30
+            }
+          ]
+        }
+      },
+      "House_Rope": {
+        "props": {
+          "rotation": [
+            {
+              "frame": 0,
+              "value": -30,
+              "curve": "sineInOut"
+            },
+            {
+              "frame": 1,
+              "value": 30,
+              "curve": "sineInOut"
+            },
+            {
+              "frame": 2,
+              "value": -30
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

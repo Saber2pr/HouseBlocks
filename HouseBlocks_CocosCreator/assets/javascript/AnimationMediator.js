@@ -1,4 +1,5 @@
 var AnimationMediator = {
+    //背景循环
     backgroundLoop (Sprite, pix) {
         if (Sprite.node.x > -pix) {
             Sprite.node.x-=1

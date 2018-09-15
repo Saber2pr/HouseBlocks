@@ -5,8 +5,12 @@ cc.Class({
 
     properties:{
         scoreLabel:cc.Label,
+        //地面刚体
         bottom:cc.Node,
-        backgroundColor:cc.Sprite,
+        //地面贴图
+        //天空背景图
+        background:cc.Sprite,
+        ground:cc.Node,
         audio:cc.AudioClip
     },
     //碰撞初
@@ -15,27 +19,32 @@ cc.Class({
         var worldManifold = contact.getWorldManifold()
         //获取碰撞点的世界坐标[0:vec2, 1:vec2, ...]
         var points = worldManifold.points
-        //判断触地,考虑到物理弹性所以小于10
-        if (GlobalData.HouseVector.length > 1 && points[0].y < 10) {
-            //这里会报错不过可以忽略
+        //判断触地
+        if (GlobalData.HouseVector.length > 1 && points[0].y < 20) {
             cc.director.loadScene("GameOverScene")
         }
-        this.scoreLabel.string = "思考：" + GlobalData.HouseVector.length
+        //获取数据
+        this.scoreLabel.string = GlobalData.HouseVector.length
         if (points[0].y > cc.winSize.height/4) {
-            var dorpAction = cc.moveTo(0.5, cc.v2(this.bottom.x, this.bottom.y - GlobalData.HouseVector[0].getContentSize().height))
+            //地面刚体下降动作
+            var dorpAction = cc.moveTo(0.5, cc.v2(
+                        this.bottom.x, 
+                        this.bottom.y - GlobalData.HouseVector[0].getContentSize().height))
             this.bottom.runAction(dorpAction)
+            //地面图片精灵下降动作
+            this.ground.runAction(cc.moveTo(0.5, cc.v2(
+                            this.ground.x, 
+                            this.ground.y - 5)))
+            //天空背景加深,步长值255/20
+            var colorEle = 255 - GlobalData.HouseVector.length * (255/20)
+            this.background.node.runAction(cc.tintTo(0.5, colorEle, colorEle, colorEle))
+            //遍历所有house同步执行动作，由于父子节点未同步
             for (var house of GlobalData.HouseVector) {
                 var dorpAction = cc.moveTo(0.5, house.x, house.y - house.getContentSize().height)
                 house.runAction(dorpAction)
             }
         }
-        if (GlobalData.HouseVector.length > 0) {
-            var tintTo = cc.tintTo(2.0, 120.0, 232.0, 254.0)
-            var tintBy = cc.tintBy(2, 120, 232, 254)
-            var tintTo1 = cc.tintTo(0, 0, 0, 0)
-            var seq = cc.sequence(tintTo, tintBy, tintTo1)
-            this.backgroundColor.node.runAction(seq)
-        }
+        //碰撞音效
         this.current = cc.audioEngine.play(this.audio, false, 1)
-    }
+    },
 })

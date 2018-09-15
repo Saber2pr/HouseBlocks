@@ -113,6 +113,9 @@
     "_children": [
       {
         "__id__": 4
+      },
+      {
+        "__id__": 15
       }
     ],
     "_tag": -1,
@@ -172,9 +175,6 @@
       },
       {
         "__id__": 10
-      },
-      {
-        "__id__": 15
       }
     ],
     "_tag": -1,
@@ -410,9 +410,7 @@
       "__id__": 8
     },
     "_enabled": true,
-    "_spriteFrame": {
-      "__uuid__": "e79e8448-35ad-456d-993e-3d7854ea1d25"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 1,
     "_fillType": 0,
@@ -516,7 +514,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 280,
+      "width": 160,
       "height": 40
     },
     "_rotationX": 0,
@@ -551,7 +549,7 @@
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
-    "_N$string": "站在别人的肩膀",
+    "_N$string": "叠楼方块",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
@@ -636,7 +634,7 @@
     "_name": "ui",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 4
+      "__id__": 3
     },
     "_children": [
       {
@@ -810,7 +808,7 @@
     "_N$file": null,
     "_isSystemFontUsed": true,
     "_spacingX": 0,
-    "_N$string": "开始思考",
+    "_N$string": "开始游戏",
     "_N$horizontalAlign": 1,
     "_N$verticalAlign": 1,
     "_N$fontFamily": "Arial",
@@ -919,9 +917,6 @@
     },
     "background": {
       "__id__": 7
-    },
-    "hero": {
-      "__id__": 9
     },
     "audio": {
       "__uuid__": "a2faa739-fd69-43b2-9f5c-2c62405b14b6"
