@@ -47,4 +47,4 @@
 # Notice:
 * Please indicate the source of the reprint.
 * Open source is used only for learning.
-* Not allowed to be used for commercial use without my permission!
+* @AK-12(Prpr_Saber)copyright
