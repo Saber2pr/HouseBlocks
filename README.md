@@ -6,6 +6,11 @@
 > [试玩creator版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile/)
 > [下载ForAndroid [password:ao25]](https://pan.baidu.com/s/1ypif9Bm356Dud2YMVXOnvw "密码：ao25")
 
+### creator重置版
+> 发布为mobile版，建议手机端预览，桌面打开体验不佳
+* ![creator重置版](https://github.com/Saber2pr/MyWeb/blob/master/resource/newHouseBlocks.jpg)
+> [点击预览](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile0.1/)
+
 * cocos2d-js版本
  1. 文字的添加
  2. ui菜单按钮的基本使用
