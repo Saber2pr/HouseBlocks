@@ -212,7 +212,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": -422,
-      "y": 139
+      "y": -482
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -344,11 +344,11 @@
     "bottom": {
       "__id__": 45
     },
+    "background": {
+      "__id__": 15
+    },
     "ground": {
       "__id__": 16
-    },
-    "backgroundColor": {
-      "__id__": 15
     },
     "audio": {
       "__uuid__": "a2faa739-fd69-43b2-9f5c-2c62405b14b6"
