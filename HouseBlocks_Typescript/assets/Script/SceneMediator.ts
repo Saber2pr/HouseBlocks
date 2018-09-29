@@ -1,11 +1,18 @@
 import SceneMediatorInterface from './SceneMediatorInterface'
+
 /**
- * 管理交互的类
+ *单例类
+ *
+ * @class Singleton
  */
-export default class SceneMediator implements SceneMediatorInterface{
+class Singleton {
     static _instance: SceneMediator;
     /**
-     * 获取静态实例
+     *获取静态实例
+     *
+     * @static
+     * @returns {SceneMediator}
+     * @memberof Singleton
      */
     static getInstance(): SceneMediator {
         if(this._instance === undefined){
@@ -15,6 +22,16 @@ export default class SceneMediator implements SceneMediatorInterface{
             return this._instance;
         }
     }
+}
+/**
+ *管理场景切换的类
+ *
+ * @export
+ * @class SceneMediator
+ * @extends {Singleton}
+ * @implements {SceneMediatorInterface}
+ */
+export default class SceneMediator extends Singleton implements SceneMediatorInterface{
     gotoStartScene(): void{
         cc.director.loadScene("StartScene")
     }
