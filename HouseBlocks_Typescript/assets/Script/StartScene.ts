@@ -9,22 +9,22 @@
 //  - [English] http://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
 const {ccclass, property} = cc._decorator;
+import SceneMediator from './SceneMediator'
 
 @ccclass
 export default class StartScene extends cc.Component {
 
-    @property(cc.Label)
-    label: cc.Label = null;
-
-    @property
-    text: string = 'hello';
+    @property(cc.Button)
+    startBtn: cc.Button = null;
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}
 
     start () {
-
+        this.startBtn.node.on('click', ()=>{
+            SceneMediator.getInstance().gotoPlayScene()
+        })
     }
 
     // update (dt) {}
