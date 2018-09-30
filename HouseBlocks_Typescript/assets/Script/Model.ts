@@ -1,8 +1,8 @@
 /*
  * @Author: AK-12 
  * @Date: 2018-09-30 20:19:40 
- * @Last Modified by:   AK-12 
- * @Last Modified time: 2018-09-30 20:19:40 
+ * @Last Modified by: AK-12
+ * @Last Modified time: 2018-09-30 20:54:28
  */
 /**
  *单例类
@@ -34,6 +34,7 @@ export default class Singleton {
  */
 class Model {
     private _score: number;
+    private _scoreRecord: Array<number>;
     private _houseGroup: Array<cc.Node>;
     private _groundHeight: number;
     private _houseSize: cc.Size;
@@ -60,5 +61,11 @@ class Model {
     }
     get houseSize(){
         return this._houseSize
+    }
+    set scoreRecord(array: Array<number>){
+        this._scoreRecord = array
+    }
+    get scoreRecord(){
+        return this._scoreRecord
     }
 }

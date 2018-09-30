@@ -776,6 +776,9 @@
     "_enabled": true,
     "restartBtn": {
       "__id__": 9
+    },
+    "scoreLabel": {
+      "__id__": 12
     }
   }
 ]

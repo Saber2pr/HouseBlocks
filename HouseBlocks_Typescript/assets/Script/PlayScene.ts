@@ -1,8 +1,8 @@
 /*
  * @Author: AK-12 
  * @Date: 2018-09-30 20:20:14 
- * @Last Modified by:   AK-12 
- * @Last Modified time: 2018-09-30 20:20:14 
+ * @Last Modified by: AK-12
+ * @Last Modified time: 2018-09-30 20:55:06
  */
 const {ccclass, property} = cc._decorator;
 import {PlaySceneInterface} from './SceneInterface'
@@ -36,11 +36,11 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
 
     onLoad (): void {
         this.initModelData();
+        this.initView();
         this.initUiEvents();
         this.initTouchEvents();
         this.initCustomEvent();
         this.initPhysics();
-        this.initArray();
     }
 
     start(): void {
@@ -50,13 +50,18 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
     initModelData(): void {
         Model.getInstance().groundHeight = this.bottom.y;
         Model.getInstance().houseSize = this.house_onRope.node.getContentSize()
+        Model.getInstance().score = 0;
+        Model.getInstance().houseGroup = new Array<cc.Node>();
+    }
+
+    initView(): void {
+        this.scoreLabel.string = "0";
     }
 
     initUiEvents(): void {
         this.backBtn.node.on('click', ()=>{
             SceneMediator.getInstance().gotoStartScene();
         });
-        this.scoreLabel.string = "0";
     }
 
     initTouchEvents():void {
@@ -96,11 +101,6 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
         let pm: cc.PhysicsManager = cc.director.getPhysicsManager();
         pm.enabled = true;
         pm.gravity = cc.v2(0, -620);
-    }
-
-    initArray(): void {
-        Model.getInstance().score = 0;
-        Model.getInstance().houseGroup = new Array<cc.Node>();
     }
 
     addHouse(): void {

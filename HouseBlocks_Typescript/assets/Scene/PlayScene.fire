@@ -1083,7 +1083,7 @@
     "tag": 0,
     "_density": 1,
     "_sensor": false,
-    "_friction": 0.2,
+    "_friction": 1,
     "_restitution": 0,
     "body": null,
     "_offset": {
@@ -1138,6 +1138,9 @@
     },
     "bottom": {
       "__id__": 24
+    },
+    "ground": {
+      "__id__": 15
     }
   }
 ]

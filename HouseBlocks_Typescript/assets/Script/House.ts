@@ -1,8 +1,8 @@
 /*
  * @Author: AK-12 
  * @Date: 2018-09-30 20:19:58 
- * @Last Modified by:   AK-12 
- * @Last Modified time: 2018-09-30 20:19:58 
+ * @Last Modified by: AK-12
+ * @Last Modified time: 2018-09-30 21:08:16
  */
 const {ccclass} = cc._decorator;
 import Model from './Model'
@@ -30,8 +30,7 @@ export default class House extends cc.Component {
             )
         }
         let minY = Model.getInstance().houseSize.height
-        cc.log(points[0].y, minY)
-        if(Model.getInstance().houseGroup.length>0 && points[0].y < minY){
+        if(Model.getInstance().houseGroup.length>1 && points[0].y < minY){
             this.node.dispatchEvent(
                 new cc.Event.EventCustom("gameover", true)
             )
