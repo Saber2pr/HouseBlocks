@@ -1,8 +1,9 @@
 /*
  * @Author: AK-12 
  * @Date: 2018-09-30 20:19:49 
- * @Last Modified by:   AK-12 
- * @Last Modified time: 2018-09-30 20:19:49 
+ * @Last Modified by: AK-12
+ * @Last Modified time: 2018-09-30 21:14:04
+ * @Description: 这是个额外的模块，暂时还没用到。
  */
 import FactoryInterface from './FactoryInterface'
 

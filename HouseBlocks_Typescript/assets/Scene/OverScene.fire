@@ -779,6 +779,9 @@
     },
     "scoreLabel": {
       "__id__": 12
+    },
+    "hightScoreLabel": {
+      "__id__": 16
     }
   }
 ]
