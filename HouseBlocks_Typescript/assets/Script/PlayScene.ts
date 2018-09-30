@@ -1,8 +1,15 @@
 const {ccclass, property} = cc._decorator;
-import PlaySceneInterface from './PlaySceneInterface'
+import {PlaySceneInterface} from './SceneInterface'
 import SceneMediator from './SceneMediator'
 import Model from './Model'
-
+/**
+ *View
+ *
+ * @export
+ * @class PlayScene
+ * @extends {cc.Component}
+ * @implements {PlaySceneInterface}
+ */
 @ccclass
 export default class PlayScene extends cc.Component implements PlaySceneInterface {
 
@@ -22,6 +29,7 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
     ground: cc.Sprite = null;
 
     onLoad (): void {
+        this.initModelData();
         this.initUiEvents();
         this.initTouchEvents();
         this.initCustomEvent();
@@ -31,6 +39,11 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
 
     start(): void {
 
+    }
+
+    initModelData(): void {
+        Model.getInstance().groundHeight = this.bottom.y;
+        Model.getInstance().houseSize = this.house_onRope.node.getContentSize()
     }
 
     initUiEvents(): void {
@@ -53,7 +66,7 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
         });
         this.node.on('bottomDown', (event)=>{
             function nextPos(pos: cc.Vec2, step: number): cc.Vec2 {
-                return cc.v2(pos.x, pos.y - step)
+                return cc.v2(pos.x, pos.y - step);
             }
             let step = this.house_onRope.node.getContentSize().height/2
             this.bottom.runAction(cc.moveTo(0.5, nextPos(this.bottom.position, step)));
@@ -62,6 +75,14 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
                 house.runAction(cc.moveTo(0.5, nextPos(house.position, step)));
             }
             event.stopPropagation();
+        })
+        this.node.on('dark', (event)=>{
+            let colorEle = 255 - Model.getInstance().houseGroup.length * (255/20);
+            this.background.node.runAction(cc.tintTo(0.5, colorEle, colorEle, colorEle));
+            event.stopPropagation();
+        })
+        this.node.on('gameover', (event)=>{
+            SceneMediator.getInstance().gotoOverScene();
         })
     }
 
@@ -72,7 +93,7 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
     }
 
     initArray(): void {
-        Model.getInstance().score = 0.5;
+        Model.getInstance().score = 0;
         Model.getInstance().houseGroup = new Array<cc.Node>();
     }
 
@@ -85,5 +106,6 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
         node.parent = this.background.node;
         node.position = pos;
         Model.getInstance().houseGroup.push(node);
+        Model.getInstance().score++;
     }
 }
