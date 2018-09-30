@@ -11,6 +11,18 @@
 * ![creator重置版](https://github.com/Saber2pr/MyWeb/blob/master/resource/newHouseBlocks.jpg)
 > [点击预览](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile0.1/)
 
+## 这里有四个版本
+* HouseBlocks-Current-v_Chinese-ForWeChat
+> 适配微信api的release（压缩）版本
+* HouseBlocks-Current（推荐）
+> 英文界面，debug版本，游戏结束有显示当前分数的功能（源代码：[index.html](https://github.com/Saber2pr/HouseBlocks/blob/master/HouseBlocks-current/index.html)）
+* HouseBlocks0.1
+> 中文界面，release（压缩）版本。
+* HouseBlocks_CocosCreator（JavaScript脚本）（推荐）
+> 物理效果更加真实，添加了音效, 游戏结束有统计最高分数的功能（[查看js脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CocosCreator/assets/javascript)）
+* HouseBlocks_Typescript（Typescript脚本）（推荐）
+> 进行严格的类型检查，代码更优雅，体现强类型语言特点，利用接口来规范编码。（[查看ts脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_Typescript/assets/Script)）
+
 ## 相关教程
 * cocos2d-js版本
  1. 文字的添加
@@ -32,18 +44,6 @@
  6. 触摸事件[示例CSDN-事件监听](https://blog.csdn.net/u011607490/article/details/82179038)
  7. 碰撞事件[示例CSDN-碰撞回调](https://blog.csdn.net/u011607490/article/details/82179686)
  8. 其他 [访问我的CSDN](https://blog.csdn.net/u011607490/article/category/7971217)
-
-## 这里有四个版本
-* HouseBlocks-Current-v_Chinese-ForWeChat
-> 适配微信api的release（压缩）版本
-* HouseBlocks-Current（推荐）
-> 英文界面，debug版本，游戏结束有显示当前分数的功能（源代码：[index.html](https://github.com/Saber2pr/HouseBlocks/blob/master/HouseBlocks-current/index.html)）
-* HouseBlocks0.1
-> 中文界面，release（压缩）版本。
-* HouseBlocks_CocosCreator（JavaScript脚本）（推荐）
-> 物理效果更加真实，添加了音效, 游戏结束有统计最高分数的功能（[查看js脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CocosCreator/assets/javascript)）
-* HouseBlocks_Typescript（Typescript脚本）（推荐）
-> 进行严格的类型检查，代码更优雅，体现强类型语言特点，利用接口来规范编码。（[查看ts脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_Typescript/assets/Script)）
 
 ## 查看其他例子
 [Saber2pr/CocosCreatorExam](https://github.com/Saber2pr/CocosCreatorExam)
