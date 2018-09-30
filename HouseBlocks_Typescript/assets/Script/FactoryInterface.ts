@@ -6,7 +6,7 @@ export default interface FactoryInterface {
      * @param {number} size
      * @memberof FactoryInterface
      */
-    import(stuff: any, size: number): boolean;
+    import(stuff: any, size: number): void;
     /**
      *出口产品
      *

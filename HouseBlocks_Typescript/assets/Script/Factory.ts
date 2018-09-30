@@ -1,7 +1,7 @@
 import FactoryInterface from './FactoryInterface'
 
 export default class Factory implements FactoryInterface {
-    private _repository: any = [];
+    private _repository: Array<any> = [];
     private _stuff: any;
     private _size: number;
     private _recover(): void{
@@ -12,11 +12,10 @@ export default class Factory implements FactoryInterface {
     constructor(stuff: any, size: number){
         this.import(stuff, size)
     }
-    import(stuff: any, size: number): boolean{
+    import(stuff: any, size: number): void{
         this._stuff = stuff;
         this._size = size;
         this._recover()
-        return true
     }
     export(): any{
         if (this._repository.length > 0) {

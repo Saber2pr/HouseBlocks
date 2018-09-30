@@ -18,6 +18,14 @@ export default interface PlaySceneInterface {
      */
     initTouchEvents(): void;
     /**
+     *初始化物理
+     *
+     * @memberof PlaySceneInterface
+     */
+    initPhysics(): void;
+    
+    initArray(): void;
+    /**
      *添加房子
      *
      * @memberof PlaySceneInterface
