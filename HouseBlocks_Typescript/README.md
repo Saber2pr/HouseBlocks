@@ -1,4 +1,4 @@
-# 使用Typescript编写cocos
+# 使用Typescript编写cocos代码
 > 1. 可以更加容易的创建静态变量
 ```js
 /**
