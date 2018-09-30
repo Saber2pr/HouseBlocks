@@ -11,6 +11,7 @@
 * ![creator重置版](https://github.com/Saber2pr/MyWeb/blob/master/resource/newHouseBlocks.jpg)
 > [点击预览](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile0.1/)
 
+## 相关教程
 * cocos2d-js版本
  1. 文字的添加
  2. ui菜单按钮的基本使用
