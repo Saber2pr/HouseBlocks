@@ -4,7 +4,7 @@
 
 > [试玩2d-js版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks-current/)
 > [试玩creator版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile/)
-  <br>
+  </br>
   [下载ForAndroid [password:ao25]](https://pan.baidu.com/s/1ypif9Bm356Dud2YMVXOnvw "密码：ao25")
 
 ### Creator重置版
