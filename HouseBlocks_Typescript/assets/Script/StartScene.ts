@@ -6,7 +6,6 @@ export default class StartScene extends cc.Component {
 
     @property(cc.Button)
     startBtn: cc.Button = null;
-
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}

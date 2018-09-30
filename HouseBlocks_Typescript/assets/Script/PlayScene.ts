@@ -6,7 +6,7 @@ export default class PlayScene extends cc.Component {
 
     @property(cc.Button)
     backBtn: cc.Button = null;
-
+    
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {}

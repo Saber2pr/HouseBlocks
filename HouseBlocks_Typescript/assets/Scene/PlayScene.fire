@@ -910,13 +910,15 @@
       "__id__": 17
     },
     "_enabled": true,
-    "_defaultClip": null,
+    "_defaultClip": {
+      "__uuid__": "1cbe6fce-96c6-4872-bbbf-cb11a411b4a2"
+    },
     "_clips": [
       {
         "__uuid__": "1cbe6fce-96c6-4872-bbbf-cb11a411b4a2"
       }
     ],
-    "playOnLoad": false
+    "playOnLoad": true
   },
   {
     "__type__": "cc.RigidBody",
