@@ -2,7 +2,7 @@
  * @Author: AK-12 
  * @Date: 2018-09-30 20:20:32 
  * @Last Modified by: AK-12
- * @Last Modified time: 2018-09-30 22:18:04
+ * @Last Modified time: 2018-09-30 22:29:09
  */
 const {ccclass, property} = cc._decorator;
 import SceneMediator from './SceneMediator'
@@ -27,7 +27,7 @@ export default class StartScene extends cc.Component implements StartSceneInterf
     }
 
     initAudioData(){
-        SceneMediator.getInstance().initAudio(this.audio);
+        // SceneMediator.getInstance().initAudio(this.audio);
     }
 
     initModelData(): void{
