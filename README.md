@@ -1,4 +1,6 @@
 # HouseBlocks
+> 从一个简单的游戏体会cocos和js   
+
 ![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CU.jpg "cocos2d-js版本")
 ![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CCC.jpg "cocosCreator版本")
 
