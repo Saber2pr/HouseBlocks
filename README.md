@@ -11,7 +11,7 @@
 * ![creator重置版](https://github.com/Saber2pr/MyWeb/blob/master/resource/newHouseBlocks.jpg)
 > [点击预览](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile0.1/)
 
-## 这里有四个版本
+## 这里有五个版本
 * HouseBlocks-Current-v_Chinese-ForWeChat
 > 适配微信api的release（压缩）版本
 * HouseBlocks-Current（推荐）
