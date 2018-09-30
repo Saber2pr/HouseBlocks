@@ -1,5 +1,5 @@
 # 使用Typescript编写cocos
-> 例如：可以更加容易的创建静态变量
+> 1. 可以更加容易的创建静态变量
 ```js
 /**
  *单例类
@@ -25,7 +25,7 @@ export default class Singleton {
     }
 }
 ```
-> 可以实现接口
+> 2. 可以实现接口
 ```js
 import FactoryInterface from './FactoryInterface'
 /**
