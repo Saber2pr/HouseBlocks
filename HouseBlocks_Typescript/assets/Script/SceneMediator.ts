@@ -37,7 +37,7 @@ export default class Singleton {
  * @extends {Singleton}
  * @implements {SceneMediatorInterface}
  */
-class SceneMediator implements SceneMediatorInterface{
+class SceneMediator implements SceneMediatorInterface {
     gotoStartScene(): void{
         cc.director.loadScene("StartScene")
     }

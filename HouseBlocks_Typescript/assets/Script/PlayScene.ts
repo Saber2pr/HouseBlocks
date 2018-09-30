@@ -2,7 +2,7 @@
  * @Author: AK-12 
  * @Date: 2018-09-30 20:20:14 
  * @Last Modified by: AK-12
- * @Last Modified time: 2018-09-30 20:55:06
+ * @Last Modified time: 2018-09-30 21:20:58
  */
 const {ccclass, property} = cc._decorator;
 import {PlaySceneInterface} from './SceneInterface'
@@ -33,6 +33,8 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
     bottom: cc.Node = null;
     @property(cc.Sprite)
     ground: cc.Sprite = null;
+    @property(cc.Sprite)
+    cloud: cc.Sprite = null;
 
     onLoad (): void {
         this.initModelData();
@@ -113,5 +115,11 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
         node.position = pos;
         Model.getInstance().houseGroup.push(node);
         Model.getInstance().score++;
+    }
+
+    update(dt) {
+        this.cloud.node.x = 
+        this.cloud.node.x < cc.winSize.width / 2? 
+        this.cloud.node.x + 1: 0
     }
 }
