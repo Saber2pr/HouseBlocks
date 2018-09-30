@@ -5,7 +5,7 @@ import SceneMediatorInterface from './SceneMediatorInterface'
  *
  * @class Singleton
  */
-class Singleton {
+export default class Singleton {
     static _instance: SceneMediator;
     /**
      *获取静态实例
@@ -31,7 +31,7 @@ class Singleton {
  * @extends {Singleton}
  * @implements {SceneMediatorInterface}
  */
-export default class SceneMediator extends Singleton implements SceneMediatorInterface{
+class SceneMediator implements SceneMediatorInterface{
     gotoStartScene(): void{
         cc.director.loadScene("StartScene")
     }
