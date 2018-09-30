@@ -4,7 +4,7 @@ export default interface PlaySceneInterface {
      *
      * @memberof PlaySceneInterface
      */
-    initFactorys(): void;
+    initFactorys?(): void;
     /**
      *初始化UI事件监听
      *
@@ -23,7 +23,7 @@ export default interface PlaySceneInterface {
      * @memberof PlaySceneInterface
      */
     initPhysics(): void;
-    
+
     initArray(): void;
     /**
      *添加房子

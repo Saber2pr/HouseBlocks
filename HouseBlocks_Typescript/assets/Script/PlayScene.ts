@@ -1,7 +1,6 @@
 const {ccclass, property} = cc._decorator;
 import PlaySceneInterface from './PlaySceneInterface'
 import SceneMediator from './SceneMediator'
-import Factory from './Factory'
 import Model from './Model'
 
 @ccclass
@@ -18,12 +17,9 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
     @property(cc.Label)
     scoreLabel: cc.Label = null;
 
-    private houseFactory: Factory = null;
-
     onLoad (): void {
         this.initUiEvents();
         this.initTouchEvents();
-        this.initFactorys();
         this.initPhysics();
         this.initArray();
     }
@@ -34,13 +30,6 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
             this.scoreLabel.string = Model.getInstance().score.toString();
             event.stopPropagation();
         });
-    }
-
-    initFactorys(): void {
-        this.houseFactory = new Factory(
-            cc.instantiate(this.housePrefab),
-            10
-        );
     }
 
     initUiEvents(): void {
