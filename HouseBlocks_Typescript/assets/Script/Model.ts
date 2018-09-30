@@ -1,3 +1,9 @@
+/*
+ * @Author: AK-12 
+ * @Date: 2018-09-30 20:19:40 
+ * @Last Modified by:   AK-12 
+ * @Last Modified time: 2018-09-30 20:19:40 
+ */
 /**
  *单例类
  *

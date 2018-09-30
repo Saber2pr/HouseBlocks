@@ -1,3 +1,9 @@
+/*
+ * @Author: AK-12 
+ * @Date: 2018-09-30 20:20:10 
+ * @Last Modified by:   AK-12 
+ * @Last Modified time: 2018-09-30 20:20:10 
+ */
 const {ccclass, property} = cc._decorator;
 import {OverSceneInterface} from './SceneInterface'
 import SceneMediator from './SceneMediator'

@@ -1,3 +1,9 @@
+/*
+ * @Author: AK-12 
+ * @Date: 2018-09-30 20:20:14 
+ * @Last Modified by:   AK-12 
+ * @Last Modified time: 2018-09-30 20:20:14 
+ */
 const {ccclass, property} = cc._decorator;
 import {PlaySceneInterface} from './SceneInterface'
 import SceneMediator from './SceneMediator'
