@@ -18,6 +18,7 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
     onLoad () {
         this.initUiEvents();
         this.initTouchEvents();
+        this.initFactorys();
     }
 
     start () {
@@ -39,9 +40,17 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
 
     initTouchEvents():void {
         this.background.node.on('touchstart', ()=>{
-            console.log("touch!")
+            console.log("touch!");
+            this.addHouse();
         })
     }
 
+    addHouse(): void {
+        let node: cc.Node = this.houseFactory.export();
+        //let worldPoint: cc.Vec2 = node.parent.convertToWorldSpace(node.position)
+        //let localPoint: cc.Vec2 = this.background.node.convertToNodeSpace(worldPoint)
+        node.parent = this.background.node;
+        node.position = cc.p(0, 0)
+    }
     // update (dt) {}
 }
