@@ -16,19 +16,21 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
     house_onRope: cc.Sprite = null;
     @property(cc.Label)
     scoreLabel: cc.Label = null;
+    @property(cc.Node)
+    bottom: cc.Node = null;
+    @property(cc.Sprite)
+    ground: cc.Sprite = null;
 
     onLoad (): void {
         this.initUiEvents();
         this.initTouchEvents();
+        this.initCustomEvent();
         this.initPhysics();
         this.initArray();
     }
 
     start(): void {
-        this.node.on('scoreUp', (event)=>{
-            this.scoreLabel.string = Model.getInstance().score.toString();
-            event.stopPropagation();
-        });
+
     }
 
     initUiEvents(): void {
@@ -41,6 +43,25 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
     initTouchEvents():void {
         this.background.node.on('touchstart', ()=>{
             this.addHouse();
+        })
+    }
+
+    initCustomEvent(): void{
+        this.node.on('scoreUp', (event)=>{
+            this.scoreLabel.string = Model.getInstance().score.toString();
+            event.stopPropagation();
+        });
+        this.node.on('bottomDown', (event)=>{
+            function nextPos(pos: cc.Vec2, step: number): cc.Vec2 {
+                return cc.v2(pos.x, pos.y - step)
+            }
+            let step = this.house_onRope.node.getContentSize().height/2
+            this.bottom.runAction(cc.moveTo(0.5, nextPos(this.bottom.position, step)));
+            this.ground.node.runAction(cc.moveTo(0.5, nextPos(this.ground.node.position, step/5)));
+            for(const house of Model.getInstance().houseGroup){
+                house.runAction(cc.moveTo(0.5, nextPos(house.position, step)));
+            }
+            event.stopPropagation();
         })
     }
 

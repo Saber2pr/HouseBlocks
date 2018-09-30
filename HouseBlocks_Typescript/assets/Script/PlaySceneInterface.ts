@@ -18,6 +18,12 @@ export default interface PlaySceneInterface {
      */
     initTouchEvents(): void;
     /**
+     *初始化自定义事件监听
+     *
+     * @memberof PlaySceneInterface
+     */
+    initCustomEvent(): void;
+    /**
      *初始化物理
      *
      * @memberof PlaySceneInterface

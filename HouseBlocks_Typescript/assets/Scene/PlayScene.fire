@@ -905,13 +905,13 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 100
+      "width": 77,
+      "height": 77
     },
     "_rotationX": 0,
     "_rotationY": 0,
-    "_scaleX": 0.77,
-    "_scaleY": 0.77,
+    "_scaleX": 1,
+    "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
@@ -1132,6 +1132,12 @@
     },
     "house_onRope": {
       "__id__": 21
+    },
+    "scoreLabel": {
+      "__id__": 12
+    },
+    "bottom": {
+      "__id__": 24
     }
   }
 ]

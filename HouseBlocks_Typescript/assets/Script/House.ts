@@ -9,12 +9,17 @@ import Model from './Model'
  */
 @ccclass
 export default class House extends cc.Component {
-    onBeginContact(contact,selfCollider,otherCollider){
+    onBeginContact(contact){
         var worldManifold = contact.getWorldManifold();
         var points = worldManifold.points;
-        Model.getInstance().score+=0.5
+        Model.getInstance().score+=0.5;
         this.node.dispatchEvent(
             new cc.Event.EventCustom("scoreUp", true)
-        )
+        );
+        if(points[0].y > cc.winSize.height / 4){
+            this.node.dispatchEvent(
+                new cc.Event.EventCustom("bottomDown", true)
+            );
+        }
     }
 }
