@@ -566,6 +566,9 @@
     "_enabled": true,
     "startBtn": {
       "__id__": 11
+    },
+    "audio": {
+      "__uuid__": "25447772-2c78-499b-82ad-4c7274d730da"
     }
   }
 ]

@@ -2,7 +2,7 @@
  * @Author: AK-12 
  * @Date: 2018-09-30 20:20:14 
  * @Last Modified by: AK-12
- * @Last Modified time: 2018-09-30 22:40:49
+ * @Last Modified time: 2018-09-30 22:42:32
  */
 const {ccclass, property} = cc._decorator;
 import {PlaySceneInterface} from './SceneInterface'
@@ -102,7 +102,7 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
     initPhysics(): void {
         let pm: cc.PhysicsManager = cc.director.getPhysicsManager();
         pm.enabled = true;
-        pm.gravity = cc.v2(0, -620);
+        pm.gravity = cc.v2(0, -1020);
     }
 
     addHouse(): void {
