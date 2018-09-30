@@ -1,13 +1,18 @@
 /*
  * @Author: AK-12 
  * @Date: 2018-09-30 20:20:25 
- * @Last Modified by:   AK-12 
- * @Last Modified time: 2018-09-30 20:20:25 
+ * @Last Modified by: AK-12
+ * @Last Modified time: 2018-09-30 22:14:13
  */
 /**
  * 类SceneMediator的接口
  */
 export default interface SceneMediatorInterface {
+    /**
+     * 初始化音效资源
+     * @param audio 
+     */
+    initAudio(audio: cc.AudioClip): void
     /**
      * 加载开始场景
      */

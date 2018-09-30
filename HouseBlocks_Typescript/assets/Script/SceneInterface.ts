@@ -2,7 +2,7 @@
  * @Author: AK-12 
  * @Date: 2018-09-30 20:05:46 
  * @Last Modified by: AK-12
- * @Last Modified time: 2018-09-30 20:40:19
+ * @Last Modified time: 2018-09-30 22:17:01
  */
 /**
  *SceneInterface
@@ -22,6 +22,12 @@ export default interface SceneInterface {
      * @memberof SceneInterface
      */
     initModelData?(): void;
+    /**
+     *初始化音效数据
+     *
+     * @memberof SceneInterface
+     */
+    initAudioData?(): void;
     /**
      *初始化视图
      *

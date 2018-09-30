@@ -2,7 +2,7 @@
  * @Author: AK-12 
  * @Date: 2018-09-30 20:20:14 
  * @Last Modified by: AK-12
- * @Last Modified time: 2018-09-30 21:20:58
+ * @Last Modified time: 2018-09-30 21:49:45
  */
 const {ccclass, property} = cc._decorator;
 import {PlaySceneInterface} from './SceneInterface'
@@ -75,6 +75,7 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
     initCustomEvent(): void{
         this.node.on('scoreUp', (event)=>{
             this.scoreLabel.string = Model.getInstance().score.toString();
+            SceneMediator.getInstance().playAudio()
             event.stopPropagation();
         });
         this.node.on('bottomDown', (event)=>{

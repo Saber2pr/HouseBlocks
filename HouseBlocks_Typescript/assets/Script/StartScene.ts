@@ -2,7 +2,7 @@
  * @Author: AK-12 
  * @Date: 2018-09-30 20:20:32 
  * @Last Modified by: AK-12
- * @Last Modified time: 2018-09-30 21:06:52
+ * @Last Modified time: 2018-09-30 22:18:04
  */
 const {ccclass, property} = cc._decorator;
 import SceneMediator from './SceneMediator'
@@ -14,14 +14,20 @@ export default class StartScene extends cc.Component implements StartSceneInterf
 
     @property(cc.Button)
     startBtn: cc.Button = null;
+    @property(cc.AudioClip)
+    audio: cc.AudioClip = null;
 
     onLoad () {
-        this.initModelData()
-        this.initUiEvents()
+        this.initModelData();
+        this.initUiEvents();
     }
 
     start () {
         
+    }
+
+    initAudioData(){
+        SceneMediator.getInstance().initAudio(this.audio);
     }
 
     initModelData(): void{
@@ -30,7 +36,7 @@ export default class StartScene extends cc.Component implements StartSceneInterf
 
     initUiEvents(): void{
         this.startBtn.node.on('click', ()=>{
-            SceneMediator.getInstance().gotoPlayScene()
+            SceneMediator.getInstance().gotoPlayScene();
         })
     }
 }
