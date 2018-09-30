@@ -25,8 +25,7 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
     }
 
     start(): void {
-        this.node.on('scoreUp', ()=>{
-            cc.log("up");
+        this.node.on('scoreUp', (event)=>{
             this.scoreLabel.string = Model.getInstance().score.toString();
             event.stopPropagation();
         });
@@ -41,7 +40,6 @@ export default class PlayScene extends cc.Component implements PlaySceneInterfac
 
     initTouchEvents():void {
         this.background.node.on('touchstart', ()=>{
-            console.log("touch!");
             this.addHouse();
         })
     }
