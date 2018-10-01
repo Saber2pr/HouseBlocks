@@ -1,9 +1,11 @@
 #include "PlayScene.h"
 #include "SceneMediator.h"
+#include "House.h"
 
 Scene* PlayScene::createScene()
 {
-	auto scene = Scene::create();
+	auto scene = Scene::createWithPhysics();
+	scene->getPhysicsWorld()->setGravity(Vec2(0, -800));
 	auto layer = PlayScene::create();
 	scene->addChild(layer);
 	return scene;
@@ -38,6 +40,11 @@ bool PlayScene::initView()
 	this->_score->setPosition(scoreLabelPos);
 
 	this->addChild(this->_score);
+
+	House* house = House::create();
+	this->addChild(house, 1);
+	house->setPosition(this->_size.width / 2, this->_size.height / 2);
+
 	return true;
 }
 
