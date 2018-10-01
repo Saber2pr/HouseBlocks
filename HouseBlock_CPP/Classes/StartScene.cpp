@@ -1,6 +1,6 @@
 #include "StartScene.h"
 #include "SceneMediator.h"
-
+#include "Model.h"
 
 StartScene::StartScene()
 {
@@ -24,6 +24,7 @@ bool StartScene::init()
 	Scene::init();
 	this->initView();
 	this->initUI();
+	this->initModel();
 
 	return true;
 }
@@ -77,5 +78,12 @@ bool StartScene::initUI()
 
 bool StartScene::initTouchEvent()
 {
+	return true;
+}
+
+bool StartScene::initModel()
+{
+	std::vector<int> scoreRecord = {};
+	Model::getInstance()->setScoreRecord(scoreRecord);
 	return true;
 }

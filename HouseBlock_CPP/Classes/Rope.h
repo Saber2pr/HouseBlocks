@@ -7,15 +7,12 @@ USING_NS_CC;
 
 class Rope : public cocos2d::Node, commonInterface
 {
-protected:
-	static Rope* _instance;
-
 private:
 	Sprite* _ropeSpr = nullptr;
 	House* _house_onRope = nullptr;
 
 public:
-	static Rope* getInstance();
+	CREATE_FUNC(Rope);
 	virtual bool init();
 	bool initView();
 };

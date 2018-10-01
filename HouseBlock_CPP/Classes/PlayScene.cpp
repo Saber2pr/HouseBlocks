@@ -1,7 +1,9 @@
 #include "PlayScene.h"
 #include "SceneMediator.h"
 #include "House.h"
-#include "Rope.h"
+#include "AnimationMediator.h"
+#include "Model.h"
+#include "Transformer.h"
 
 Scene* PlayScene::createScene()
 {
@@ -17,7 +19,8 @@ bool PlayScene::init()
 	Scene::init();
 	this->initView();
 	this->initUI();
-
+	this->initTouchEvent();
+	this->initModel();
 	return true;
 }
 
@@ -32,24 +35,24 @@ bool PlayScene::initView()
 	this->_background->setContentSize(backSize);
 	this->_background->setPosition(backPos);
 	this->addChild(this->_background, 0);
-	//_title
-	this->_score = Label::createWithTTF("score", "fonts/Marker Felt.ttf", 24);
+	//_score
+	this->_scoreLabel = Label::createWithTTF("score", "fonts/Marker Felt.ttf", 24);
 	auto scoreLabelSize = Size(100, 50);
 	auto scoreLabelPos = Vec2(this->_size.width - 50, this->_size.height);
-	this->_score->setContentSize(scoreLabelSize);
-	this->_score->setAnchorPoint(Vec2(1, 1));
-	this->_score->setPosition(scoreLabelPos);
-
-	this->addChild(this->_score);
-
-	//House* house = House::create();
-	//this->addChild(house, 1);
-	//house->setPosition(this->_size.width / 2, this->_size.height / 2);
-	Rope* rope = Rope::getInstance();
-	this->addChild(rope, 1);
-	rope->setScale(0.5);
-	rope->setRotation(30);
-	rope->setPosition(this->_size.width / 2, this->_size.height);
+	this->_scoreLabel->setContentSize(scoreLabelSize);
+	this->_scoreLabel->setAnchorPoint(Vec2(1, 1));
+	this->_scoreLabel->setPosition(scoreLabelPos);
+	this->addChild(this->_scoreLabel);
+	this->_score = Label::createWithTTF("0", "fonts/Marker Felt.ttf", 24);
+	this->_scoreLabel->addChild(this->_score);
+	this->_score->setPosition(20, -20);
+	//_rope
+	this->_rope = Rope::create();
+	this->_rope->setScale(0.5);
+	this->_rope->runAction(AnimationMediator::swing(30, 1.0));
+	this->_rope->getChildByName("rope")->getChildByName("house_onRope")->runAction(AnimationMediator::swing(-30, 1.0));
+	this->_rope->setPosition(this->_size.width / 2, this->_size.height);
+	this->addChild(this->_rope, 1);
 
 	return true;
 }
@@ -82,5 +85,33 @@ bool PlayScene::initUI()
 
 bool PlayScene::initTouchEvent()
 {
+	auto touchListener = EventListenerTouchOneByOne::create();
+	touchListener->onTouchBegan = [this](Touch* t, Event* e) {
+		log("touch!");
+		this->addHouse();
+		return false;
+	};
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this->_background);
+	return true;
+}
+
+void PlayScene::addHouse()
+{
+	House* house = House::create();
+	house->setScale(0.7f);
+	this->_background->addChild(house, 1);
+	Node* target = this->_rope->getChildByName("rope")->getChildByName("house_onRope");
+	Vec2 worldPoint = target->getParent()->convertToWorldSpace(target->getPosition());
+	Vec2 localPoint = this->_background->convertToNodeSpace(worldPoint);
+	house->setPosition(localPoint);
+	this->_scoreNum++;
+	Model::getInstance()->setScore(this->_scoreNum);
+	int modelScore = Model::getInstance()->getScore();
+	this->_score->setString(Transformer::numToString(modelScore));
+}
+
+bool PlayScene::initModel()
+{
+	Model::getInstance()->setScore(0);
 	return true;
 }
