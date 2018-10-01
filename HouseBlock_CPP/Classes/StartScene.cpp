@@ -1,5 +1,5 @@
 #include "StartScene.h"
-
+#include "SceneMediator.h"
 
 
 StartScene::StartScene()
@@ -60,7 +60,7 @@ bool StartScene::initUI()
 	this->_startBtn->setContentSize(startBtnSize);
 	this->_startBtn->setPosition(startBtnPos);
 	this->_startBtn->addClickEventListener([](Ref* ref) {
-		log("click");
+		SceneMediator::getInstance()->gotoPlayScene();
 	});
 	//_startBtnLabel
 	Label* startBtnLabel = Label::createWithTTF("start", "fonts/Marker Felt.ttf", 24);
