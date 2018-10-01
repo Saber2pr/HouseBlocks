@@ -15,7 +15,6 @@ private:
 	Label* _score = nullptr;
 	ui::Button* _backBtn = nullptr;
 	Rope* _rope = nullptr;
-	int _scoreNum;
 public:
 	CREATE_FUNC(PlayScene);
 	static Scene* createScene();

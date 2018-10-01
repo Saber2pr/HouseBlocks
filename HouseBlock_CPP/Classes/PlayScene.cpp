@@ -104,14 +104,14 @@ void PlayScene::addHouse()
 	Vec2 worldPoint = target->getParent()->convertToWorldSpace(target->getPosition());
 	Vec2 localPoint = this->_background->convertToNodeSpace(worldPoint);
 	house->setPosition(localPoint);
-	this->_scoreNum++;
-	Model::getInstance()->setScore(this->_scoreNum);
-	int modelScore = Model::getInstance()->getScore();
-	this->_score->setString(Transformer::numToString(modelScore));
+	Model::getInstance()->setScore(Model::getInstance()->getScore()+1);
+	this->_score->setString(Transformer::numToString(Model::getInstance()->getScore()));
+	Model::getInstance()->getHouseVector().pushBack(house);
 }
 
 bool PlayScene::initModel()
 {
 	Model::getInstance()->setScore(0);
+	Model::getInstance()->getHouseVector().clear();
 	return true;
 }
