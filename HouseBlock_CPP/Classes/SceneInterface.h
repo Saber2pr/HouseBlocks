@@ -4,12 +4,13 @@
 class SceneInterface: public commonInterface
 {
 public:
+	virtual ~SceneInterface() {};
 	/************************************************************************/
 	/* 初始化UI                                                                     */
 	/************************************************************************/
-	virtual bool initUI() { return true; };
+	virtual bool initUI() = 0;
 	/************************************************************************/
 	/* 初始化触摸事件                                                                     */
 	/************************************************************************/
-	virtual bool initTouchEvent() { return true; };
+	virtual bool initTouchEvent() = 0;
 };

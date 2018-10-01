@@ -19,5 +19,6 @@ public:
 	virtual bool init();
 	bool initView();
 	bool initUI();
+	bool initTouchEvent();
 };
 

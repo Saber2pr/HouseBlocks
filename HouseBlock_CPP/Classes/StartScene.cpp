@@ -75,3 +75,7 @@ bool StartScene::initUI()
 	return true;
 }
 
+bool StartScene::initTouchEvent()
+{
+	return true;
+}

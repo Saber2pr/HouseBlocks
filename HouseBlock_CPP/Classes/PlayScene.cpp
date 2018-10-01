@@ -72,3 +72,8 @@ bool PlayScene::initUI()
 	this->addChild(this->_backBtn, 1);
 	return true;
 }
+
+bool PlayScene::initTouchEvent()
+{
+	return true;
+}
