@@ -1,6 +1,7 @@
 #include "PlayScene.h"
 #include "SceneMediator.h"
 #include "House.h"
+#include "Rope.h"
 
 Scene* PlayScene::createScene()
 {
@@ -41,9 +42,14 @@ bool PlayScene::initView()
 
 	this->addChild(this->_score);
 
-	House* house = House::create();
-	this->addChild(house, 1);
-	house->setPosition(this->_size.width / 2, this->_size.height / 2);
+	//House* house = House::create();
+	//this->addChild(house, 1);
+	//house->setPosition(this->_size.width / 2, this->_size.height / 2);
+	Rope* rope = Rope::getInstance();
+	this->addChild(rope, 1);
+	rope->setScale(0.5);
+	rope->setRotation(30);
+	rope->setPosition(this->_size.width / 2, this->_size.height);
 
 	return true;
 }
@@ -69,6 +75,7 @@ bool PlayScene::initUI()
 	backBtnLabel->setColor(cocos2d::Color3B::BLACK);
 	this->_backBtn->addChild(backBtnLabel);
 	
+	this->_backBtn->setScale(0.5);
 	this->addChild(this->_backBtn, 1);
 	return true;
 }
