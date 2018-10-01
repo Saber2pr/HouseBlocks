@@ -5,7 +5,7 @@
 
 USING_NS_CC;
 
-class PlayScene : public cocos2d::Scene, PlaySceneInterface
+class PlayScene : public cocos2d::Scene, SceneInterface
 {
 private:
 	Size _size;

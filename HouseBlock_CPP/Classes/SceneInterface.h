@@ -13,11 +13,3 @@ public:
 	/************************************************************************/
 	virtual bool initTouchEvent() { return true; };
 };
-class StartSceneInterface: public SceneInterface
-{
-
-};
-class PlaySceneInterface : public SceneInterface
-{
-
-};
