@@ -19,4 +19,7 @@ class StartSceneInterface: public SceneInterface
 {
 
 };
+class PlaySceneInterface : public SceneInterface
+{
 
+};
