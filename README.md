@@ -16,7 +16,7 @@
 ![creator重置版](https://github.com/Saber2pr/MyWeb/blob/master/resource/newHouseBlocks.jpg)
 > [点击预览](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile0.1/)
 ***
-## 这里有六个版本
+## 这里有四个版本
 * HouseBlocks_CocosCreator（Javascript脚本）（推荐）
 > 物理效果更加真实，添加了音效, 游戏结束有统计最高分数的功能（[查看js脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CocosCreator/assets/javascript)）
 * HouseBlocks_Typescript（Typescript脚本）（推荐）
@@ -25,10 +25,7 @@
 > 英文界面，debug版本，游戏结束有显示当前分数的功能（源代码：[index.html](https://github.com/Saber2pr/HouseBlocks/blob/master/HouseBlocks-current/index.html)）
 * HouseBlocks_CPP（cocos2d-x版本）
 > C++版本，但存在一些BUG待修复。（源代码：[Classes](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CPP/Classes)）
-* HouseBlocks-Current-v_Chinese-ForWeChat
-> 适配微信api的release（压缩）版本
-* HouseBlocks0.1
-> 中文界面，release（压缩）版本。
+
 ***
 ## 相关教程
 * cocos2d-js版本
