@@ -10,8 +10,10 @@ bool Rope::initView()
 	this->addChild(this->_ropeSpr);
 
 	this->_house_onRope = House::create();
+	this->_house_onRope->setAnchorPoint(Vec2(0.5, 1));
 	this->_house_onRope->setScale(1.6f);
 	this->_house_onRope->getPhysicsBody()->setDynamic(false);
+	this->_house_onRope->getPhysicsBody()->setContactTestBitmask(0);
 	this->_house_onRope->getPhysicsBody()->setCollisionBitmask(0);
 	this->_house_onRope->setPosition(this->_ropeSpr->getContentSize().width/2, 0);
 	this->_house_onRope->setName("house_onRope");

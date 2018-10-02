@@ -78,7 +78,6 @@ bool StartScene::initUI()
 
 bool StartScene::initModel()
 {
-	std::vector<int> scoreRecord = {};
-	Model::getInstance()->setScoreRecord(scoreRecord);
+	Model::getInstance()->getScoreRecord().clear();
 	return true;
 }

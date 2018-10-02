@@ -1,4 +1,5 @@
 #include "House.h"
+#include "Model.h"
 
 bool House::init()
 {
@@ -12,9 +13,11 @@ bool House::init()
 bool House::initView()
 {
 	this->_size = Size(77, 77);
+	this->setAnchorPoint(Vec2(0.5, 1));
+	this->setContentSize(this->_size);
 	this->_spr = Sprite::create("house.png");
 	this->_spr->setContentSize(this->_size);
-	this->_spr->setAnchorPoint(Vec2(0.5, 1));
+	this->_spr->setAnchorPoint(Vec2(0, 0));
 	this->addChild(this->_spr);
 	return true;
 }
@@ -22,7 +25,7 @@ bool House::initView()
 bool House::initPhysicsBody()
 {
 	this->_body = PhysicsBody::createBox(this->_size);
-	this->_body->setRotationEnable(false);
+	this->_body->setRotationEnable(true);
 	this->_body->setContactTestBitmask(1);
 	this->setPhysicsBody(this->_body);
 	return true;
@@ -35,6 +38,10 @@ bool House::initCollisionEvent()
 		log("contact!post!");
 		auto ec = EventCustom("updateScore");
 		Director::getInstance()->getEventDispatcher()->dispatchEvent(&ec);
+		if (Model::getInstance()->getHouseVector().size() > 2 || true){
+			auto ec2 = EventCustom("bottomDown");
+			Director::getInstance()->getEventDispatcher()->dispatchEvent(&ec2);
+		} 
 		return true;
 	};
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);

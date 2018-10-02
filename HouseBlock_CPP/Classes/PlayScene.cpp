@@ -9,6 +9,7 @@ Scene* PlayScene::createScene()
 {
 	auto scene = Scene::createWithPhysics();
 	scene->getPhysicsWorld()->setGravity(Vec2(0, -800));
+	scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
 	auto layer = PlayScene::create();
 	scene->addChild(layer);
 	return scene;
@@ -128,9 +129,22 @@ bool PlayScene::initModel()
 
 bool PlayScene::initEventCustom()
 {
+	//updateScore
 	Director::getInstance()->getEventDispatcher()->addCustomEventListener("updateScore", [this](EventCustom* e) {
-		log("get!");
+		log("get!updateScore");
 		this->_score->setString(Transformer::numToString(Model::getInstance()->getScore()));
+		e->stopPropagation();
+	});
+	//bottomDown
+	Director::getInstance()->getEventDispatcher()->addCustomEventListener("bottomDown", [this](EventCustom* e) {
+		log("get!bottomDown");
+		
+		this->_ground->runAction(MoveTo::create(0.5, AnimationMediator::toVertical(this->_ground->getPosition(), 50)));
+		for (auto iter = Model::getInstance()->getHouseVector().begin(); iter != Model::getInstance()->getHouseVector().end(); iter++)
+		{
+			Vec2 next2 = AnimationMediator::toVertical((*iter)->getPosition(), 77);
+			(*iter)->runAction(MoveTo::create(0.5, next2));
+		}
 		e->stopPropagation();
 	});
 	return true;
