@@ -27,6 +27,7 @@ bool House::initPhysicsBody()
 	this->_body = PhysicsBody::createBox(this->_size);
 	this->_body->setRotationEnable(true);
 	this->_body->setContactTestBitmask(1);
+	this->_body->setMass(0.1f);
 	this->setPhysicsBody(this->_body);
 	return true;
 }
@@ -38,7 +39,7 @@ bool House::initCollisionEvent()
 		log("contact!post!");
 		auto ec = EventCustom("updateScore");
 		Director::getInstance()->getEventDispatcher()->dispatchEvent(&ec);
-		if (Model::getInstance()->getHouseVector().size() > 2 || true){
+		if (Model::getInstance()->getHouseVector().size() > 3){
 			auto ec2 = EventCustom("bottomDown");
 			Director::getInstance()->getEventDispatcher()->dispatchEvent(&ec2);
 		} 

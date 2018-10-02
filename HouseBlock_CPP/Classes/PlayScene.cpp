@@ -9,7 +9,7 @@ Scene* PlayScene::createScene()
 {
 	auto scene = Scene::createWithPhysics();
 	scene->getPhysicsWorld()->setGravity(Vec2(0, -800));
-	scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+	scene->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_NONE);
 	auto layer = PlayScene::create();
 	scene->addChild(layer);
 	return scene;
@@ -57,7 +57,7 @@ bool PlayScene::initView()
 	this->addChild(this->_rope, 1);
 	//_ground
 	this->_ground = Ground::create();
-	this->_ground->setPosition(this->_size.width / 2, 0);
+	this->_ground->setPosition(this->_size.width / 2, -10);
 	this->addChild(this->_ground, 2);
 	//_spr
 	this->_spr = Sprite::create("ground.png");
@@ -138,13 +138,32 @@ bool PlayScene::initEventCustom()
 	//bottomDown
 	Director::getInstance()->getEventDispatcher()->addCustomEventListener("bottomDown", [this](EventCustom* e) {
 		log("get!bottomDown");
-		
-		this->_ground->runAction(MoveTo::create(0.5, AnimationMediator::toVertical(this->_ground->getPosition(), 50)));
-		for (auto iter = Model::getInstance()->getHouseVector().begin(); iter != Model::getInstance()->getHouseVector().end(); iter++)
+		this->_ground->runAction(MoveTo::create(0.5, AnimationMediator::toVertical(this->_ground->getPosition(), -10)));
+		/************************************************************************/
+		/* Good Luck ! C++ er
+				  ____
+				 |	     __|__  __|__
+				 |___	   |	  |
+
+			$/_________\$
+		  $/____________\$
+		$/________________\$
+				  _
+				 ||
+				_||_
+				\  /
+				 \/
+
+			____ _  _ ____ ___ ___ ___  ___ ___ ___ ___
+			 |    \/  |__| |_  |_  |	|_|  |	|_|  |
+			 |	  |   |	   |__  _| |__  |\_ _|_ |	 |
+
+		/************************************************************************/
+		/*for (auto iter = Model::getInstance()->getHouseVector().begin(); iter != Model::getInstance()->getHouseVector().end(); iter++)
 		{
 			Vec2 next2 = AnimationMediator::toVertical((*iter)->getPosition(), 77);
 			(*iter)->runAction(MoveTo::create(0.5, next2));
-		}
+		}*/
 		e->stopPropagation();
 	});
 	return true;
