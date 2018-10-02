@@ -99,6 +99,7 @@ bool PlayScene::initTouchEvent()
 	touchListener->onTouchBegan = [this](Touch* t, Event* e) {
 		log("touch!");
 		this->addHouse();
+		e->stopPropagation();
 		return true;
 	};
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this->_background);
@@ -130,6 +131,7 @@ bool PlayScene::initEventCustom()
 	Director::getInstance()->getEventDispatcher()->addCustomEventListener("updateScore", [this](EventCustom* e) {
 		log("get!");
 		this->_score->setString(Transformer::numToString(Model::getInstance()->getScore()));
+		e->stopPropagation();
 	});
 	return true;
 }
