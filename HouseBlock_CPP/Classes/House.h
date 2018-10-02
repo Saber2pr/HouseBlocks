@@ -15,4 +15,5 @@ public:
 	virtual bool init();
 	bool initView();
 	bool initPhysicsBody();
+	bool initCollisionEvent();
 };

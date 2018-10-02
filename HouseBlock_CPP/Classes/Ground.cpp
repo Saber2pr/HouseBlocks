@@ -4,6 +4,7 @@ bool Ground::init()
 {
 	this->initView();
 	this->initPhysicsBody();
+	this->initCollisionEvent();
 	return true;
 }
 
@@ -14,6 +15,15 @@ bool Ground::initView()
 }
 
 bool Ground::initPhysicsBody()
+{
+	this->_body = PhysicsBody::createBox(this->_size);
+	this->_body->setDynamic(false);
+	this->_body->setContactTestBitmask(1);
+	this->setPhysicsBody(this->_body);
+	return true;
+}
+
+bool Ground::initCollisionEvent()
 {
 	return true;
 }

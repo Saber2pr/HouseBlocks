@@ -5,6 +5,7 @@ bool House::init()
 	Node::init();
 	this->initView();
 	this->initPhysicsBody();
+	this->initCollisionEvent();
 	return true;
 }
 
@@ -24,5 +25,18 @@ bool House::initPhysicsBody()
 	this->_body->setRotationEnable(false);
 	this->_body->setContactTestBitmask(1);
 	this->setPhysicsBody(this->_body);
+	return true;
+}
+
+bool House::initCollisionEvent()
+{
+	auto listener = EventListenerPhysicsContact::create();
+	listener->onContactBegin = [](PhysicsContact& contact) {
+		log("contact!sendEvent!");
+		auto ec = EventCustom("updateScore");
+		Director::getInstance()->getEventDispatcher()->dispatchEvent(&ec);
+		return true;
+	};
+	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
 	return true;
 }

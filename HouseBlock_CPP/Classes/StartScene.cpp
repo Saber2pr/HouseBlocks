@@ -76,11 +76,6 @@ bool StartScene::initUI()
 	return true;
 }
 
-bool StartScene::initTouchEvent()
-{
-	return true;
-}
-
 bool StartScene::initModel()
 {
 	std::vector<int> scoreRecord = {};

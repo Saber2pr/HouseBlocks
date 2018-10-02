@@ -3,10 +3,11 @@
 #include "ui/CocosGUI.h"
 #include "SceneInterface.h"
 #include "Rope.h"
+#include "Ground.h"
 
 USING_NS_CC;
 
-class PlayScene : public cocos2d::Scene, SceneInterface
+class PlayScene : public cocos2d::Scene, EventSceneInterface
 {
 private:
 	Size _size;
@@ -15,6 +16,8 @@ private:
 	Label* _score = nullptr;
 	ui::Button* _backBtn = nullptr;
 	Rope* _rope = nullptr;
+	Ground* _ground = nullptr;
+	Sprite* _spr = nullptr;
 public:
 	CREATE_FUNC(PlayScene);
 	static Scene* createScene();
@@ -24,4 +27,5 @@ public:
 	bool initTouchEvent();
 	void addHouse();
 	bool initModel();
+	bool initEventCustom();
 };

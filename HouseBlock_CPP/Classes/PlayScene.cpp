@@ -21,6 +21,7 @@ bool PlayScene::init()
 	this->initUI();
 	this->initTouchEvent();
 	this->initModel();
+	this->initEventCustom();
 	return true;
 }
 
@@ -53,6 +54,15 @@ bool PlayScene::initView()
 	this->_rope->getChildByName("rope")->getChildByName("house_onRope")->runAction(AnimationMediator::swing(-30, 1.0));
 	this->_rope->setPosition(this->_size.width / 2, this->_size.height);
 	this->addChild(this->_rope, 1);
+	//_ground
+	this->_ground = Ground::create();
+	this->_ground->setPosition(this->_size.width / 2, 0);
+	this->addChild(this->_ground, 2);
+	//_spr
+	this->_spr = Sprite::create("ground.png");
+	this->_spr->setScale(0.72f);
+	this->_spr->setPosition(this->_size.width / 2, 0);
+	this->addChild(this->_spr,  1);
 
 	return true;
 }
@@ -99,7 +109,7 @@ void PlayScene::addHouse()
 {
 	House* house = House::create();
 	house->setScale(0.7f);
-	this->_background->addChild(house, 1);
+	this->_background->addChild(house, 2);
 	Node* target = this->_rope->getChildByName("rope")->getChildByName("house_onRope");
 	Vec2 worldPoint = target->getParent()->convertToWorldSpace(target->getPosition());
 	Vec2 localPoint = this->_background->convertToNodeSpace(worldPoint);
@@ -113,5 +123,13 @@ bool PlayScene::initModel()
 {
 	Model::getInstance()->setScore(0);
 	Model::getInstance()->getHouseVector().clear();
+	return true;
+}
+
+bool PlayScene::initEventCustom()
+{
+	Director::getInstance()->getEventDispatcher()->addCustomEventListener("updateScore", [](EventCustom* e) {
+		log("get!");
+	});
 	return true;
 }

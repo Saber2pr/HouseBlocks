@@ -8,11 +8,11 @@ class Ground : public cocos2d::Node, PhysicInterface
 {
 private:
 	Size _size;
-	Sprite* _spr = nullptr;
 	PhysicsBody* _body = nullptr;
 public:
 	CREATE_FUNC(Ground);
 	virtual bool init();
 	bool initView();
 	bool initPhysicsBody();
+	bool initCollisionEvent();
 };
