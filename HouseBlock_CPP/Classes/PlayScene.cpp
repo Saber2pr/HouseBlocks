@@ -117,7 +117,7 @@ void PlayScene::addHouse()
 	Vec2 localPoint = this->_background->convertToNodeSpace(worldPoint);
 	house->setPosition(localPoint);
 	Model::getInstance()->setScore(Model::getInstance()->getScore()+1);
-	Model::getInstance()->getHouseVector().pushBack(house);
+	Model::getInstance()->getHouseVector().push_back(house);
 }
 
 bool PlayScene::initModel()
