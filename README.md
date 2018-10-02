@@ -28,7 +28,7 @@
 
 ***
 ## 相关教程
-* cocos2d-js版本
+* Cocos2d-js版本
  1. 文字的添加
  2. ui菜单按钮的基本使用
  3. 场景切换的方法
@@ -39,7 +39,7 @@
  8. 触摸事件的基本使用 [示例CSDN-单点触摸事件](https://blog.csdn.net/u011607490/article/details/81388344)
  9. 其他 [访问我的CSDN](https://blog.csdn.net/u011607490/article/category/7899652)
 
-* ccCreator版本
+* CocosCreator版本
  1. 使用creator物理引擎[示例bilibili-从创建简易物理世界开始](https://www.bilibili.com/video/av30401963)
  2. 使用ui控件触发事件[示例bilibili-场景切换的方法](https://www.bilibili.com/video/av30373678)
  3. 动画编辑器、曲线编辑器的基本使用[示例bilibili-钟摆动画](https://www.bilibili.com/video/av30396417)
