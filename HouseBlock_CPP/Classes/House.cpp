@@ -32,7 +32,7 @@ bool House::initCollisionEvent()
 {
 	auto listener = EventListenerPhysicsContact::create();
 	listener->onContactBegin = [](PhysicsContact& contact) {
-		log("contact!sendEvent!");
+		log("contact!post!");
 		auto ec = EventCustom("updateScore");
 		Director::getInstance()->getEventDispatcher()->dispatchEvent(&ec);
 		return true;

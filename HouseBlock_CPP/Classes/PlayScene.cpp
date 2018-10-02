@@ -99,7 +99,7 @@ bool PlayScene::initTouchEvent()
 	touchListener->onTouchBegan = [this](Touch* t, Event* e) {
 		log("touch!");
 		this->addHouse();
-		return false;
+		return true;
 	};
 	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, this->_background);
 	return true;
@@ -115,7 +115,6 @@ void PlayScene::addHouse()
 	Vec2 localPoint = this->_background->convertToNodeSpace(worldPoint);
 	house->setPosition(localPoint);
 	Model::getInstance()->setScore(Model::getInstance()->getScore()+1);
-	this->_score->setString(Transformer::numToString(Model::getInstance()->getScore()));
 	Model::getInstance()->getHouseVector().pushBack(house);
 }
 
@@ -128,8 +127,9 @@ bool PlayScene::initModel()
 
 bool PlayScene::initEventCustom()
 {
-	Director::getInstance()->getEventDispatcher()->addCustomEventListener("updateScore", [](EventCustom* e) {
+	Director::getInstance()->getEventDispatcher()->addCustomEventListener("updateScore", [this](EventCustom* e) {
 		log("get!");
+		this->_score->setString(Transformer::numToString(Model::getInstance()->getScore()));
 	});
 	return true;
 }
