@@ -26,7 +26,7 @@
 * HouseBlocks_CPP（Cocos2d-x版本）
 > C++版本，但存在一些BUG待修复。（源代码：[Classes](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CPP/Classes)）
 * HouseBlocks_Vue
-> 正在coding...先实现类似cocos的部分基础绘图,可能会使用box2d或者chipmunk物理引擎。
+> 正在coding...先实现类似cocos的部分基础绘图和UI,可能会使用box2d或者chipmunk物理引擎。
 
 ***
 ## 相关教程
