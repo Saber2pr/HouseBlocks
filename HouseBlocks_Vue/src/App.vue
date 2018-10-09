@@ -7,14 +7,8 @@
 </template>
 
 <script>
-import StartScene from './scenes/StartScene'
-import PlayScene from './scenes/PlayScene'
 
 export default {
-  components: {
-    StartScene,
-    PlayScene
-  }
 }
 </script>
 
