@@ -25,7 +25,7 @@
 > 英文界面，debug版本，游戏结束有显示当前分数的功能（源代码：[index.html](https://github.com/Saber2pr/HouseBlocks/blob/master/HouseBlocks-current/index.html)）
 * HouseBlocks_CPP（Cocos2d-x版本）
 > C++版本，但存在一些BUG待修复。（源代码：[Classes](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CPP/Classes)）
-* HouseBlocks_Vue
+* HouseBlocks_Vue（Vue-cli版本）
 > 正在coding...先实现类似cocos的部分基础绘图和UI,可能会使用box2d或者chipmunk物理引擎。
 
 ***
