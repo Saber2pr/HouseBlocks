@@ -1,6 +1,6 @@
 <template>
   <button class="myButton"
-          :style="{fontSize: fontSize, color: '#a56164', top: y, left: x}"
+          :style="{fontSize: fontSize, color: color, top: y, left: x}"
           @click="go()">{{text}}</button>
 </template>
 
