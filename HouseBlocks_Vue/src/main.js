@@ -13,5 +13,11 @@ new Vue({
   components: {
     App
   },
-  template: '<App/>'
+  computed: {
+    root: () => window.location.href
+  },
+  template: '<App/>',
+  mounted () {
+    console.log('+ main')
+  }
 })

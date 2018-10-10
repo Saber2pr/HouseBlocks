@@ -1,6 +1,6 @@
 <template>
   <div class="canvas"
-       :style="{backgroundColor: backgroundColor}">
+       :style="{'background-color': backgroundColor}">
     <slot></slot>
   </div>
 </template>

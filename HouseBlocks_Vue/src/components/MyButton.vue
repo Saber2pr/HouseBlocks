@@ -1,25 +1,15 @@
 <template>
   <button class="myButton"
-          :style="{fontSize: fontSize, color: '#a56164', top: y, left: x}"
+          :style="{'font-size': fontSize, 'color': color, 'top': y, 'left': x}"
           @click="go()">{{text}}</button>
 </template>
 
 <script>
-/**
- * btn: {
-        text: 'text',
-        fontSize: 'fontSize%',
-        color: '#color',
-        x: 'x%',
-        y: 'y%',
-        next: 'name'
-      }
- */
 export default {
-  props: ['text', 'fontSize', 'color', 'x', 'y', 'next'],
+  props: ['text', 'fontSize', 'color', 'x', 'y', 'path'],
   methods: {
     go () {
-      window.location.href = 'http://localhost:8081/#/' + this.next
+      window.location.href = this.$root.root + this.path
     }
   },
   mounted () {

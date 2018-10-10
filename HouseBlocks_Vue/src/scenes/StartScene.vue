@@ -9,7 +9,7 @@
                  :fontSize="startBtn.fontSize"
                  :color="startBtn.color"
                  :y="startBtn.y"
-                 :next="startBtn.next"></my-button>
+                 :path="startBtn.path"></my-button>
     </main-layout>
   </div>
 </template>
@@ -33,14 +33,13 @@ export default {
         fontSize: '150%',
         color: '#a56164',
         y: '10%'
-
       },
       startBtn: {
         text: 'start',
         fontSize: '150%',
         color: '#a56164',
         y: '300px',
-        next: 'PlayScene'
+        path: 'PlayScene'
       }
     }
   },
