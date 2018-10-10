@@ -11,8 +11,8 @@
               :color="rope.color"
               :y="rope.y">
     </my-block>
-    <my-block :width="block.width"
-              :height="block.height"
+    <my-block :width="block.width + 'px'"
+              :height="block.height + 'px'"
               :color="block.color"></my-block>
   </main-layout>
 </template>
@@ -21,6 +21,7 @@
 import MainLayout from '../layout/Main'
 import MyButton from '../components/MyButton'
 import MyBlock from '../components/MyBlock'
+import cp from 'chipmunk'
 
 export default {
   components: {
@@ -39,18 +40,41 @@ export default {
         y: '3px',
         path: ''
       },
-      block: {
-        width: '50px',
-        height: '50px',
-        color: 'blue'
-      },
       rope: {
         width: '10px',
         height: '70px',
         color: 'red',
         y: '-10px'
+      },
+      space: null
+    }
+  },
+  computed: {
+    block () {
+      let width = 50
+      let height = 50
+      let color = 'blue'
+      let mass = width * height * 1 / 1000
+      return {
+        mass,
+        width,
+        height,
+        color
       }
     }
+  },
+  methods: {
+    initPhysicSpace () {
+      this.space = new cp.Space()
+      this.space.gravity = cp.v(0, -1000)
+      let body = new cp.Body(this.block.mass, cp.momentForBox(this.block.mass, this.block.width, this.block.height))
+      this.space.addBody(body)
+      console.log(body)
+    }
+  },
+  mounted () {
+    console.log('+ PlayScene', this.block.mass)
+    this.initPhysicSpace()
   }
 }
 </script>
