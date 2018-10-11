@@ -46,7 +46,8 @@ export default {
         color: 'red',
         y: '-10px'
       },
-      space: null
+      space: null,
+      scheduleUpdate: null
     }
   },
   computed: {
@@ -55,26 +56,53 @@ export default {
       let height = 50
       let color = 'blue'
       let mass = width * height * 1 / 1000
+      let body = {
+        mass,
+        width,
+        height
+      }
       return {
         mass,
         width,
         height,
-        color
+        color,
+        body
       }
     }
   },
   methods: {
-    initPhysicSpace () {
-      this.space = new cp.Space()
-      this.space.gravity = cp.v(0, -1000)
-      let body = new cp.Body(this.block.mass, cp.momentForBox(this.block.mass, this.block.width, this.block.height))
-      this.space.addBody(body)
-      console.log(body)
+    update (dt) {
+      this.scheduleUpdate = dt === undefined ? null : setInterval(this.update, dt)
+      console.log('! update')
+    },
+    initPhysicSpace (space) {
+      space = new cp.Space()
+      return {
+        setGravity (gravity) {
+          space.gravity = cp.v(0, gravity)
+          return {
+            addBody (body) {
+              body = new cp.Body(body.mass, cp.momentForBox(body.mass, body.width, body.height))
+              space.addBody(body)
+              console.log(body)
+            }
+          }
+        }
+      }
     }
   },
+  created () {
+    this.update(1000)
+  },
   mounted () {
-    console.log('+ PlayScene', this.block.mass)
-    this.initPhysicSpace()
+    console.log('+ PlayScene', this.block.body.mass)
+    this.initPhysicSpace(this.space)
+      .setGravity(-1000)
+      .addBody(this.block.body)
+  },
+  beforeDestroy () {
+    clearInterval(this.scheduleUpdate)
+    console.log('- destroy PlayScene')
   }
 }
 </script>
