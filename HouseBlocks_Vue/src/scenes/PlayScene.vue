@@ -26,6 +26,11 @@ import scheduleUpdate from '../common/js/Scheduler.js'
 import cpSpace from '../common/js/cpSpace.js'
 import Vue from 'vue'
 
+const UNIT_P = 10000000
+const UNIT_M = 1000
+const DELTA = 1000 / 60
+const GRAVITY = 1000
+
 export default {
   components: {
     MainLayout,
@@ -53,11 +58,7 @@ export default {
         x: null,
         y: null
       },
-      space: null,
-      UNIT_P: 10000000,
-      UNIT_M: 1000,
-      DELTA: 1000 / 60,
-      GRAVITY: 1000
+      space: null
     }
   },
   computed: {
@@ -65,7 +66,7 @@ export default {
       let width = 50
       let height = 50
       let color = 'blue'
-      let mass = width * height / this.UNIT_M
+      let mass = width * height / UNIT_M
       let body = {
         mass,
         width,
@@ -88,13 +89,13 @@ export default {
     },
     initSpace () {
       this.space = cpSpace()
-      this.space.setGravity(this.GRAVITY)
+      this.space.setGravity(GRAVITY)
       this.block.body = this.space.addBody(this.block.body)
     },
     pos () {
       return {
-        x: this.block.body.p.x / this.UNIT_P,
-        y: this.block.body.p.y / this.UNIT_P
+        x: this.block.body.p.x / UNIT_P,
+        y: this.block.body.p.y / UNIT_P
       }
     },
     forceUpdateData () {
@@ -102,7 +103,7 @@ export default {
     }
   },
   created () {
-    this.schedule = scheduleUpdate(this.update, this.DELTA)
+    this.schedule = scheduleUpdate(this.update, DELTA)
     this.initSpace()
   },
   mounted () {
