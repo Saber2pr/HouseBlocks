@@ -22,6 +22,7 @@ import MainLayout from '../layout/Main'
 import MyButton from '../components/MyButton'
 import MyBlock from '../components/MyBlock'
 import cp from 'chipmunk'
+import scheduleUpdate from '../common/js/Scheduler.js'
 
 export default {
   components: {
@@ -47,7 +48,7 @@ export default {
         y: '-10px'
       },
       space: null,
-      scheduleUpdate: null
+      schedule: null
     }
   },
   computed: {
@@ -72,8 +73,7 @@ export default {
   },
   methods: {
     update (dt) {
-      this.scheduleUpdate = dt === undefined ? null : setInterval(this.update, dt)
-      console.log('! update')
+      console.log('! update', dt)
     },
     initPhysicSpace (space) {
       space = new cp.Space()
@@ -92,7 +92,7 @@ export default {
     }
   },
   created () {
-    this.update(1000)
+    this.schedule = scheduleUpdate(this.update, 1000 / 24)
   },
   mounted () {
     console.log('+ PlayScene', this.block.body.mass)
@@ -101,7 +101,7 @@ export default {
       .addBody(this.block.body)
   },
   beforeDestroy () {
-    clearInterval(this.scheduleUpdate)
+    this.schedule.unscheduleUpdate()
     console.log('- destroy PlayScene')
   }
 }
