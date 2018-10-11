@@ -1,6 +1,6 @@
 <template>
   <div class="myBlock"
-       :style="{'width': width, 'height': height, 'background-color': color}">
+       :style="{'width': width, 'height': height, 'background-color': color, 'top': y, 'left': x}">
   </div>
 </template>
 

@@ -13,7 +13,8 @@
     </my-block>
     <my-block :width="block.width + 'px'"
               :height="block.height + 'px'"
-              :color="block.color"></my-block>
+              :color="block.color"
+              :y="vpos.y + 'px'"></my-block>
   </main-layout>
 </template>
 
@@ -21,8 +22,9 @@
 import MainLayout from '../layout/Main'
 import MyButton from '../components/MyButton'
 import MyBlock from '../components/MyBlock'
-import cp from 'chipmunk'
 import scheduleUpdate from '../common/js/Scheduler.js'
+import cpSpace from '../common/js/cpSpace.js'
+import Vue from 'vue'
 
 export default {
   components: {
@@ -47,8 +49,15 @@ export default {
         color: 'red',
         y: '-10px'
       },
+      vpos: {
+        x: null,
+        y: null
+      },
       space: null,
-      schedule: null
+      UNIT_P: 10000000,
+      UNIT_M: 1000,
+      DELTA: 1000 / 60,
+      GRAVITY: 1000
     }
   },
   computed: {
@@ -56,7 +65,7 @@ export default {
       let width = 50
       let height = 50
       let color = 'blue'
-      let mass = width * height * 1 / 1000
+      let mass = width * height / this.UNIT_M
       let body = {
         mass,
         width,
@@ -73,32 +82,31 @@ export default {
   },
   methods: {
     update (dt) {
-      console.log('! update', dt)
+      console.log('! update')
+      this.forceUpdateData()
+      this.space.step(dt)
     },
-    initPhysicSpace (space) {
-      space = new cp.Space()
+    initSpace () {
+      this.space = cpSpace()
+      this.space.setGravity(this.GRAVITY)
+      this.block.body = this.space.addBody(this.block.body)
+    },
+    pos () {
       return {
-        setGravity (gravity) {
-          space.gravity = cp.v(0, gravity)
-          return {
-            addBody (body) {
-              body = new cp.Body(body.mass, cp.momentForBox(body.mass, body.width, body.height))
-              space.addBody(body)
-              console.log(body)
-            }
-          }
-        }
+        x: this.block.body.p.x / this.UNIT_P,
+        y: this.block.body.p.y / this.UNIT_P
       }
+    },
+    forceUpdateData () {
+      Vue.set(this.vpos, 'y', this.pos().y)
     }
   },
   created () {
-    this.schedule = scheduleUpdate(this.update, 1000 / 24)
+    this.schedule = scheduleUpdate(this.update, this.DELTA)
+    this.initSpace()
   },
   mounted () {
-    console.log('+ PlayScene', this.block.body.mass)
-    this.initPhysicSpace(this.space)
-      .setGravity(-1000)
-      .addBody(this.block.body)
+    console.log('+ PlayScene')
   },
   beforeDestroy () {
     this.schedule.unscheduleUpdate()
