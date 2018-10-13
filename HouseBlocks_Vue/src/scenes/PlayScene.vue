@@ -83,7 +83,7 @@ export default {
   },
   methods: {
     update (dt) {
-      console.log('! update')
+      console.log('! update', this.pos().y)
       this.forceUpdateData()
       this.space.step(dt)
     },
@@ -91,6 +91,7 @@ export default {
       this.space = cpSpace()
       this.space.setGravity(GRAVITY)
       this.block.body = this.space.addBody(this.block.body)
+      this.space.addEdge()
     },
     pos () {
       return {
