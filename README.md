@@ -53,6 +53,7 @@
 ***
 ## 查看其他例子
 [Saber2pr/CocosCreatorExam](https://github.com/Saber2pr/CocosCreatorExam)
+[Saber2pr/ccc-toucher](https://github.com/Saber2pr/ccc-toucher)
 ***
 ## 联系我
 * saber2pr@gmail.com
