@@ -54,7 +54,7 @@
 ## 查看其他例子
 [Saber2pr/CocosCreatorExam](https://github.com/Saber2pr/CocosCreatorExam)   
 
-[Saber2pr/ccc-toucher](https://github.com/Saber2pr/ccc-toucher)
+[Saber2pr/ccc-bullet](https://github.com/Saber2pr/ccc-bullet)
 ***
 ## 联系我
 * saber2pr@gmail.com
