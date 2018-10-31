@@ -52,7 +52,9 @@
  8. 其他 [访问我的CSDN](https://blog.csdn.net/u011607490/article/category/7971217)
 ***
 ## 查看其他例子
-[Saber2pr/CocosCreatorExam](https://github.com/Saber2pr/CocosCreatorExam)
+[Saber2pr/CocosCreatorExam](https://github.com/Saber2pr/CocosCreatorExam)   
+
+[Saber2pr/ccc-bullet](https://github.com/Saber2pr/ccc-bullet)
 ***
 ## 联系我
 * saber2pr@gmail.com
