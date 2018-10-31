@@ -6,7 +6,7 @@
  */
 const {ccclass, property} = cc._decorator;
 import SceneMediator from './SceneMediator'
-import {StartSceneInterface} from './SceneInterface'
+import {StartSceneInterface} from './IScene'
 import Model from './Model'
 
 @ccclass

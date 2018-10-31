@@ -5,7 +5,7 @@
  * @Last Modified time: 2018-09-30 22:42:32
  */
 const {ccclass, property} = cc._decorator;
-import {PlaySceneInterface} from './SceneInterface'
+import {PlaySceneInterface} from './IScene'
 import SceneMediator from './SceneMediator'
 import Model from './Model'
 /**
