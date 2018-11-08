@@ -16,6 +16,10 @@
 ![creator重置版](https://github.com/Saber2pr/MyWeb/blob/master/resource/newHouseBlocks.jpg)
 > [点击预览](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile0.1/)
 ***
+
+# 仓库大小：13.6 MB
+   
+   
 ## 这里有五个版本
 * HouseBlocks_CocosCreator（Javascript脚本）（推荐）
 > 物理效果更加真实，添加了音效, 游戏结束有统计最高分数的功能（[查看js脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CocosCreator/assets/javascript)）
