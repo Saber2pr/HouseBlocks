@@ -22,11 +22,11 @@
 * HouseBlocks_Typescript（Typescript脚本）（推荐）
 > 进行严格的类型检查，代码更优雅，体现强类型语言特点，利用接口来规范编码。（[查看ts脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_Typescript/assets/Script)）
 * HouseBlocks-Current（Cocos2d-js版本）
-> 英文界面，debug版本，游戏结束有显示当前分数的功能（源代码：[index.html](https://github.com/Saber2pr/HouseBlocks/blob/master/HouseBlocks-current/index.html)）
+> 这个代码写的差点，没有模块化，我也懒于重构它了...不过还是有一些功能实现在里面（源代码：[index.html](https://github.com/Saber2pr/HouseBlocks/blob/master/HouseBlocks-current/index.html)）
 * HouseBlocks_CPP（Cocos2d-x版本）
 > C++版本，但存在一些BUG待修复。（源代码：[Classes](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CPP/Classes)）
 * HouseBlocks_Vue（Vue-cli版本）
-> 正在coding...先实现类似cocos的部分基础绘图和UI,可能会使用box2d或者chipmunk物理引擎。
+> 本来是要用vue实现的，发现自己还是太年轻，卡在chipmunk引擎上面了
 
 ***
 ## 相关教程
