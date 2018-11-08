@@ -64,6 +64,8 @@
 [Saber2pr/CocosCreatorExam](https://github.com/Saber2pr/CocosCreatorExam)   
 
 [Saber2pr/ccc-bullet](https://github.com/Saber2pr/ccc-bullet)
+   
+[Saber2pr/2048-typescript-cocoscreator](https://github.com/Saber2pr/2048-typescript-cocoscreator)
 ***
 ## 联系我
 * saber2pr@gmail.com
