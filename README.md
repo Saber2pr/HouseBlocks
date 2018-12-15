@@ -14,10 +14,8 @@
 ***
 ***
 ## 版本说明
-* HouseBlocks_CocosCreator（Javascript脚本） 
-> 物理效果更加真实，添加了音效, 游戏结束有统计最高分数的功能（[查看js脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CocosCreator/assets/javascript)）
-* HouseBlocks_Typescript（Typescript脚本） 
-> 进行严格的类型检查，代码更优雅，体现强类型语言特点，利用接口来规范编码。（[查看ts脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_Typescript/assets/Script)）
+* HouseBlocks_CocosCreator（Javascript脚本） （[查看js脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CocosCreator/assets/javascript)）
+* HouseBlocks_Typescript（Typescript脚本） （[查看ts脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_Typescript/assets/Script)）
 
 ***
 ## 相关教程
