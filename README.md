@@ -1,12 +1,8 @@
 # HouseBlocks
 > 从一个简单的游戏中体会cocos与js。   
-
-![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CU.jpg "cocos2d-js版本")
 ![loadingImage...](https://github.com/Saber2pr/MyWeb/blob/master/resource/HB_CCC.jpg "cocosCreator版本")
 
-> [试玩2d-js版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks-current/)   
-
-> [试玩creator版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile/)   
+> [creator版本](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile/)   
 
 > [下载ForAndroid [password:ao25]](https://pan.baidu.com/s/1ypif9Bm356Dud2YMVXOnvw "密码：ao25")
 
@@ -16,22 +12,12 @@
 ![creator重置版](https://github.com/Saber2pr/MyWeb/blob/master/resource/newHouseBlocks.jpg)
 > [点击预览](https://saber2pr.github.io/HouseBlocks/HouseBlocks_CocosCreator/build/web-mobile0.1/)
 ***
-
-# 仓库大小：13.6 MB
-> 我这里单独拿出了两个项目放到另两个仓库了。   
-
-[HouseBlocks、cocoscreator-javascript版本，仓库大小1.1MB](https://github.com/Saber2pr/HouseBlocks_CocosCreator)   
-
-[HouseBlocks、cocoscreator-Typescript版本，仓库大小580.7 KB ](https://github.com/Saber2pr/HouseBlocks_Typescript)
-   
 ***
 ## 版本说明
 * HouseBlocks_CocosCreator（Javascript脚本） 
 > 物理效果更加真实，添加了音效, 游戏结束有统计最高分数的功能（[查看js脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_CocosCreator/assets/javascript)）
 * HouseBlocks_Typescript（Typescript脚本） 
 > 进行严格的类型检查，代码更优雅，体现强类型语言特点，利用接口来规范编码。（[查看ts脚本源代码](https://github.com/Saber2pr/HouseBlocks/tree/master/HouseBlocks_Typescript/assets/Script)）
-* HouseBlocks-Current（Cocos2d-js版本）
-> 这个代码写的差点，没有模块化，我也懒于重构它了...不过还是有一些功能实现在里面（源代码：[index.html](https://github.com/Saber2pr/HouseBlocks/blob/master/HouseBlocks-current/index.html)）
 
 ***
 ## 相关教程
